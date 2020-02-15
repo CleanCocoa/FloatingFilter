@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="FilterWindowController" customModule="FloatingFilter" customModuleProvider="target">
             <connections>
+                <outlet property="filterViewController" destination="FBs-ca-rOP" id="ETL-Gs-eMp"/>
                 <outlet property="itemsViewController" destination="Tkp-3I-IJC" id="veg-yA-3Cu"/>
                 <outlet property="window" destination="0e4-NX-GYB" id="vZ1-9k-BcE"/>
             </connections>
@@ -102,7 +103,7 @@
                     </scrollView>
                     <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tpl-el-ejI">
                         <rect key="frame" x="6" y="308" width="616" height="21"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Filter items" usesSingleLineMode="YES" id="eNb-Vf-dof">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Filter Items" usesSingleLineMode="YES" id="eNb-Vf-dof">
                             <font key="font" metaFont="system" size="18"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -124,6 +125,11 @@
             </connections>
             <point key="canvasLocation" x="96.5" y="-330"/>
         </window>
+        <viewController id="FBs-ca-rOP" customClass="FilterViewController" customModule="FloatingFilter" customModuleProvider="target">
+            <connections>
+                <outlet property="filterTextField" destination="Tpl-el-ejI" id="vkw-pV-Qag"/>
+            </connections>
+        </viewController>
         <viewController id="Tkp-3I-IJC" customClass="ItemsViewController" customModule="FloatingFilter" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="aAH-fy-a4f" id="you-RM-jhQ"/>

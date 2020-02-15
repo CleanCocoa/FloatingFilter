@@ -6,6 +6,7 @@ class FilterWindowController: NSWindowController {
 
     static let nibName: NSNib.Name = "FilterWindowController"
 
+    @IBOutlet var filterViewController: FilterViewController!
     @IBOutlet var itemsViewController: ItemsViewController!
 
     convenience init() {
@@ -24,11 +25,25 @@ class FilterWindowController: NSWindowController {
 
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     }
+}
+
+// MARK: User Interface façade
+
+extension FilterWindowController {
+    private func loadWindowIfNeeded() {
+        _ = self.window
+    }
+
+    func configure(filterPlaceholderText: String) {
+        loadWindowIfNeeded()
+        filterViewController.placeholderText = filterPlaceholderText
+    }
 
     func showItems(_ items: [Item]) {
+        loadWindowIfNeeded()
         itemsViewController.showItems(items)
     }
-    
+
 }
 
 // MARK: Close on ESC and other cancelation hotkeys
