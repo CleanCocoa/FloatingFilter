@@ -16,6 +16,7 @@ public struct FloatingFilterModule {
         windowController.configure(filterPlaceholderText: filterPlaceholderText)
         windowController.showItems(items)
         windowController.showWindow(nil)
+        windowController.window?.center()
         windowController.window?.makeKeyAndOrderFront(nil)
         windowHoldingService.manage(windowController: windowController)
     }
