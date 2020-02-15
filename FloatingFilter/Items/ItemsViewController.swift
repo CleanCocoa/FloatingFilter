@@ -7,7 +7,6 @@ protocol ItemSelectionDelegate: class {
 }
 
 class ItemsViewController: NSViewController {
-
     fileprivate var items: [Item] = []
 
     weak var itemSelectionDelegate: ItemSelectionDelegate?
@@ -29,7 +28,6 @@ class ItemsViewController: NSViewController {
 }
 
 extension ItemsViewController: NSTableViewDelegate, NSTableViewDataSource {
-
     func numberOfRows(in tableView: NSTableView) -> Int {
         return items.count
     }

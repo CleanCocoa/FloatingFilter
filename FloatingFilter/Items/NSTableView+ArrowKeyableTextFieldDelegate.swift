@@ -21,8 +21,7 @@ extension NSTableView: ArrowKeyableTextFieldDelegate {
     }
 
     func arrowKeyableTextFieldDidCommit(_ textField: ArrowKeyableTextField) {
-        guard let doubleAction = self.doubleAction else { return }
-        NSApp.sendAction(doubleAction, to: target, from: self)
+        self.sendDoubleAction()
     }
 
     func arrowKeyableTextFieldSelectFirst(_ textField: ArrowKeyableTextField) {

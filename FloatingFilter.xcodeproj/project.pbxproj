@@ -26,6 +26,8 @@
 		5027834723F821E300853916 /* ArrowKeyableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027834623F821E300853916 /* ArrowKeyableTextField.swift */; };
 		5027834A23F82B5300853916 /* NSTableView+ArrowKeyableTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027834923F82B5300853916 /* NSTableView+ArrowKeyableTextFieldDelegate.swift */; };
 		5027834F23F82C9B00853916 /* FilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027834E23F82C9B00853916 /* FilterInteractor.swift */; };
+		5027835123F832C200853916 /* KeyEventForwardingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027835023F832C200853916 /* KeyEventForwardingTableView.swift */; };
+		5027835323F834C900853916 /* NSTableView+sendDoubleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027835223F834C900853916 /* NSTableView+sendDoubleAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		5027834623F821E300853916 /* ArrowKeyableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowKeyableTextField.swift; sourceTree = "<group>"; };
 		5027834923F82B5300853916 /* NSTableView+ArrowKeyableTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTableView+ArrowKeyableTextFieldDelegate.swift"; sourceTree = "<group>"; };
 		5027834E23F82C9B00853916 /* FilterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterInteractor.swift; sourceTree = "<group>"; };
+		5027835023F832C200853916 /* KeyEventForwardingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyEventForwardingTableView.swift; sourceTree = "<group>"; };
+		5027835223F834C900853916 /* NSTableView+sendDoubleAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTableView+sendDoubleAction.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +174,9 @@
 			children = (
 				5027833C23F7E89600853916 /* ItemsViewController.swift */,
 				5027833E23F7EAD200853916 /* ItemCellView.swift */,
+				5027835023F832C200853916 /* KeyEventForwardingTableView.swift */,
 				5027834923F82B5300853916 /* NSTableView+ArrowKeyableTextFieldDelegate.swift */,
+				5027835223F834C900853916 /* NSTableView+sendDoubleAction.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -320,10 +326,12 @@
 				5027834723F821E300853916 /* ArrowKeyableTextField.swift in Sources */,
 				5027834123F800D000853916 /* FilterViewController.swift in Sources */,
 				5027833D23F7E89600853916 /* ItemsViewController.swift in Sources */,
+				5027835323F834C900853916 /* NSTableView+sendDoubleAction.swift in Sources */,
 				5027833323F7D44D00853916 /* Item.swift in Sources */,
 				5027833923F7DD5200853916 /* FloatingFilterModule.swift in Sources */,
 				5027834523F818FE00853916 /* AutoGrowingTextField.swift in Sources */,
 				5027833F23F7EAD200853916 /* ItemCellView.swift in Sources */,
+				5027835123F832C200853916 /* KeyEventForwardingTableView.swift in Sources */,
 				5027834A23F82B5300853916 /* NSTableView+ArrowKeyableTextFieldDelegate.swift in Sources */,
 				5027834F23F82C9B00853916 /* FilterInteractor.swift in Sources */,
 				5027833623F7DC6600853916 /* FilterWindowController.swift in Sources */,
