@@ -30,29 +30,29 @@
         <window title="Filter" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hidesOnDeactivate="YES" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="0e4-NX-GYB" customClass="KeyPanel" customModule="FloatingFilter" customModuleProvider="target">
             <rect key="contentRect" x="167" y="107" width="628" height="367"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-            <view key="contentView" id="lrc-Ix-YZV">
-                <rect key="frame" x="0.0" y="0.0" width="628" height="82"/>
+            <view key="contentView" misplaced="YES" id="lrc-Ix-YZV">
+                <rect key="frame" x="0.0" y="285" width="500" height="82"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <visualEffectView blendingMode="behindWindow" material="underWindowBackground" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="BW0-FG-fnG">
-                        <rect key="frame" x="0.0" y="0.0" width="628" height="82"/>
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="82"/>
                         <subviews>
                             <view translatesAutoresizingMaskIntoConstraints="NO" id="0BH-fJ-6Pq">
-                                <rect key="frame" x="0.0" y="0.0" width="628" height="82"/>
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="82"/>
                                 <subviews>
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhD-0i-1t4">
-                                        <rect key="frame" x="0.0" y="0.0" width="628" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="500" height="32"/>
                                         <clipView key="contentView" drawsBackground="NO" id="ULI-HJ-mzM">
-                                            <rect key="frame" x="0.0" y="0.0" width="628" height="32"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="500" height="32"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="32" usesAutomaticRowHeights="YES" viewBased="YES" floatsGroupRows="NO" id="JsY-Af-sFZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="628" height="32"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="500" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                     <tableColumns>
-                                                        <tableColumn identifier="ItemCell" width="628" minWidth="40" maxWidth="1000" id="5Ja-da-BYq">
+                                                        <tableColumn identifier="ItemCell" width="500" minWidth="40" maxWidth="1000" id="5Ja-da-BYq">
                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                                 <font key="font" metaFont="smallSystem"/>
                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -66,11 +66,11 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView identifier="ItemCell" id="Wub-5f-7Ia" customClass="ItemCellView" customModule="FloatingFilter" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="628" height="32"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="500" height="32"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="C9L-BX-XCA">
-                                                                            <rect key="frame" x="38" y="8" width="584" height="16"/>
+                                                                            <rect key="frame" x="38" y="8" width="456" height="16"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="5wp-Ic-KmO">
                                                                                 <font key="font" metaFont="system"/>
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -110,8 +110,11 @@
                                             </subviews>
                                             <nil key="backgroundColor"/>
                                         </clipView>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="500" id="FOY-pY-GlT"/>
+                                        </constraints>
                                         <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="45x-4A-xoQ">
-                                            <rect key="frame" x="1" y="119" width="223" height="15"/>
+                                            <rect key="frame" x="0.0" y="16" width="500" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="9zd-bx-YlA">
@@ -119,7 +122,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
-                                    <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b9Q-lc-NoZ">
+                                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b9Q-lc-NoZ" customClass="AutoGrowingTextField" customModule="FloatingFilter" customModuleProvider="target">
                                         <rect key="frame" x="40" y="40" width="574" height="26"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Filter Items" usesSingleLineMode="YES" id="Jfk-S4-ZnU">
                                             <font key="font" metaFont="systemLight" size="22"/>
@@ -143,7 +146,7 @@
                                     <constraint firstItem="fpw-KR-xgp" firstAttribute="centerY" secondItem="b9Q-lc-NoZ" secondAttribute="centerY" id="SQY-Yv-n2d"/>
                                     <constraint firstAttribute="bottom" secondItem="IhD-0i-1t4" secondAttribute="bottom" id="Vod-63-n29"/>
                                     <constraint firstItem="fpw-KR-xgp" firstAttribute="bottom" secondItem="b9Q-lc-NoZ" secondAttribute="bottom" id="dNr-cw-Lsy"/>
-                                    <constraint firstAttribute="trailing" secondItem="b9Q-lc-NoZ" secondAttribute="trailing" constant="16" id="qbp-bi-Eah"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="b9Q-lc-NoZ" secondAttribute="trailing" constant="16" id="qbp-bi-Eah"/>
                                     <constraint firstItem="IhD-0i-1t4" firstAttribute="leading" secondItem="0BH-fJ-6Pq" secondAttribute="leading" id="uTP-T6-CjG"/>
                                     <constraint firstItem="b9Q-lc-NoZ" firstAttribute="top" secondItem="0BH-fJ-6Pq" secondAttribute="top" constant="16" id="z0H-w8-Uam"/>
                                     <constraint firstItem="b9Q-lc-NoZ" firstAttribute="leading" secondItem="fpw-KR-xgp" secondAttribute="trailing" constant="8" id="z2M-hh-tuk"/>

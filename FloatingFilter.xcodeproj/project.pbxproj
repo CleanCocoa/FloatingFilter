@@ -22,6 +22,7 @@
 		5027833F23F7EAD200853916 /* ItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027833E23F7EAD200853916 /* ItemCellView.swift */; };
 		5027834123F800D000853916 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027834023F800CF00853916 /* FilterViewController.swift */; };
 		5027834323F8071F00853916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5027834223F8071F00853916 /* Assets.xcassets */; };
+		5027834523F818FE00853916 /* AutoGrowingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027834423F818FE00853916 /* AutoGrowingTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		5027833E23F7EAD200853916 /* ItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellView.swift; sourceTree = "<group>"; };
 		5027834023F800CF00853916 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		5027834223F8071F00853916 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5027834423F818FE00853916 /* AutoGrowingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoGrowingTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				5027834223F8071F00853916 /* Assets.xcassets */,
 				5027833C23F7E89600853916 /* ItemsViewController.swift */,
 				5027834023F800CF00853916 /* FilterViewController.swift */,
+				5027834423F818FE00853916 /* AutoGrowingTextField.swift */,
 				5027833E23F7EAD200853916 /* ItemCellView.swift */,
 				5027833A23F7DEB700853916 /* WindowHoldingService.swift */,
 				5027830623F7D27A00853916 /* Info.plist */,
@@ -293,6 +296,7 @@
 				5027833D23F7E89600853916 /* ItemsViewController.swift in Sources */,
 				5027833323F7D44D00853916 /* Item.swift in Sources */,
 				5027833923F7DD5200853916 /* FloatingFilterModule.swift in Sources */,
+				5027834523F818FE00853916 /* AutoGrowingTextField.swift in Sources */,
 				5027833F23F7EAD200853916 /* ItemCellView.swift in Sources */,
 				5027833623F7DC6600853916 /* FilterWindowController.swift in Sources */,
 				5027833B23F7DEB700853916 /* WindowHoldingService.swift in Sources */,
