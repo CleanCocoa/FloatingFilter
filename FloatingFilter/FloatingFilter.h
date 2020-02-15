@@ -1,10 +1,4 @@
-//
-//  FloatingFilter.h
-//  FloatingFilter
-//
-//  Created by Christian on 15.02.20.
-//  Copyright © 2020 Christian Tietze. All rights reserved.
-//
+//  Copyright © 2020 Christian Tietze. All rights reserved. Distributed under the MIT License.
 
 #import <Foundation/Foundation.h>
 
