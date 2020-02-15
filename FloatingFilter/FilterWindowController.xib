@@ -20,7 +20,7 @@
             <rect key="contentRect" x="167" y="107" width="621" height="348"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" id="lrc-Ix-YZV">
-                <rect key="frame" x="0.0" y="0.0" width="628" height="321"/>
+                <rect key="frame" x="0.0" y="0.0" width="628" height="329"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fb-sc-wSZ">
@@ -100,23 +100,23 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tpl-el-ejI">
-                        <rect key="frame" x="0.0" y="300" width="628" height="21"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="eNb-Vf-dof">
-                            <font key="font" usesAppearanceFont="YES"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                    <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tpl-el-ejI">
+                        <rect key="frame" x="6" y="308" width="616" height="21"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Filter items" usesSingleLineMode="YES" id="eNb-Vf-dof">
+                            <font key="font" metaFont="system" size="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Tpl-el-ejI" firstAttribute="leading" secondItem="lrc-Ix-YZV" secondAttribute="leading" id="DCd-l3-03U"/>
+                    <constraint firstItem="Tpl-el-ejI" firstAttribute="leading" secondItem="lrc-Ix-YZV" secondAttribute="leading" constant="8" id="DCd-l3-03U"/>
                     <constraint firstAttribute="trailing" secondItem="0Fb-sc-wSZ" secondAttribute="trailing" id="VMi-wk-DBf"/>
                     <constraint firstItem="Tpl-el-ejI" firstAttribute="top" secondItem="lrc-Ix-YZV" secondAttribute="top" id="lvz-Vx-ilm"/>
                     <constraint firstItem="0Fb-sc-wSZ" firstAttribute="leading" secondItem="lrc-Ix-YZV" secondAttribute="leading" id="oLx-IR-vlZ"/>
                     <constraint firstAttribute="bottom" secondItem="0Fb-sc-wSZ" secondAttribute="bottom" id="oxb-6Y-yev"/>
-                    <constraint firstItem="0Fb-sc-wSZ" firstAttribute="top" secondItem="Tpl-el-ejI" secondAttribute="bottom" id="pj5-sn-eWf"/>
-                    <constraint firstAttribute="trailing" secondItem="Tpl-el-ejI" secondAttribute="trailing" id="zMw-xH-4za"/>
+                    <constraint firstItem="0Fb-sc-wSZ" firstAttribute="top" secondItem="Tpl-el-ejI" secondAttribute="bottom" constant="8" id="pj5-sn-eWf"/>
+                    <constraint firstAttribute="trailing" secondItem="Tpl-el-ejI" secondAttribute="trailing" constant="8" id="zMw-xH-4za"/>
                 </constraints>
             </view>
             <connections>
