@@ -17,3 +17,16 @@ class FilterWindowController: NSWindowController {
     }
     
 }
+
+// MARK: Close on ESC and other cancelation hotkeys
+
+extension FilterWindowController {
+    override func cancelOperation(_ sender: Any?) {
+        self.close()
+    }
+
+    /// Is not part of `NSResponder` by default.
+    @IBAction func cancel(_ sender: Any?) {
+        self.close()
+    }
+}
