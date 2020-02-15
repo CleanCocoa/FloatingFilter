@@ -29,6 +29,8 @@
 		5027830B23F7D27A00853916 /* FloatingFilterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FloatingFilterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5027831023F7D27A00853916 /* FloatingFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingFilterTests.swift; sourceTree = "<group>"; };
 		5027831223F7D27A00853916 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5027831C23F7D40200853916 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		5027831D23F7D40200853916 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,8 @@
 		502782F823F7D27A00853916 = {
 			isa = PBXGroup;
 			children = (
+				5027831C23F7D40200853916 /* LICENSE */,
+				5027831D23F7D40200853916 /* README.md */,
 				5027830423F7D27A00853916 /* FloatingFilter */,
 				5027830F23F7D27A00853916 /* FloatingFilterTests */,
 				5027830323F7D27A00853916 /* Products */,
