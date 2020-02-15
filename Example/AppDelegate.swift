@@ -13,10 +13,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     ]
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        FloatingFilterModule.showFilterWindow(items: items)
+        showPanel(nil)
     }
 
     @IBAction func showPanel(_ sender: Any?) {
-        FloatingFilterModule.showFilterWindow(items: items)
+        FloatingFilterModule.showFilterWindow(items: items) { items in
+            print(items.map { $0.title })
+        }
     }
 }

@@ -3,7 +3,7 @@
 import Cocoa
 
 protocol ItemSelectionDelegate: class {
-    func itemsViewController(_ itemsViewController: ItemsViewController, didSelectItems: [Item])
+    func itemsViewController(_ itemsViewController: ItemsViewController, didSelectItems selectedItems: [Item])
 }
 
 class ItemsViewController: NSViewController {

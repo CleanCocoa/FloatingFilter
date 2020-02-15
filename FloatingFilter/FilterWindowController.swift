@@ -43,6 +43,16 @@ extension FilterWindowController {
         filterViewController.placeholderText = filterPlaceholderText
     }
 
+    var itemSelectionDelegate: ItemSelectionDelegate? {
+        get {
+            return itemsViewController?.itemSelectionDelegate
+        }
+        set {
+            loadWindowIfNeeded()
+            itemsViewController.itemSelectionDelegate = newValue
+        }
+    }
+
     var filterChangeDelegate: FilterChangeDelegate? {
         get {
             return filterViewController?.filterChangeDelegate
