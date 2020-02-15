@@ -83,3 +83,11 @@ extension FilterWindowController {
         self.close()
     }
 }
+
+// MARK: Typing
+
+extension FilterWindowController {
+    override func insertText(_ insertString: Any) {
+        self.filterViewController.insertText(insertString)
+    }
+}

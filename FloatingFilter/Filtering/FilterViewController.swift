@@ -24,6 +24,10 @@ class FilterViewController: NSViewController, NSTextFieldDelegate {
         self.placeholderLabel.stringValue = self.placeholderText ?? ""
     }
 
+    override func insertText(_ insertString: Any) {
+        filterTextField.insertText(insertString)
+    }
+    
     // MARK: Update for live typing
 
     func controlTextDidChange(_ obj: Notification) {

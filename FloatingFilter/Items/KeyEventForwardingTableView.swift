@@ -6,16 +6,12 @@ import Cocoa
 /// as a selection confirmation.
 class KeyEventForwardingTableView: NSTableView {
     override func keyDown(with event: NSEvent) {
-        if event.isEnter {
-            sendDoubleAction()
+        if let window = self.window {
+            // Give up first responder status and let someone else handle this (which will be the text field)
+            window.makeFirstResponder(window.initialFirstResponder)
+            NSApp.sendEvent(event)
         } else {
             super.keyDown(with: event)
         }
-    }
-}
-
-fileprivate extension NSEvent {
-    var isEnter: Bool {
-        return self.keyCode == 0x24 // VK_RETURN
     }
 }
