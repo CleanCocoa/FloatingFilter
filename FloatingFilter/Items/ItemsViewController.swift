@@ -2,9 +2,15 @@
 
 import Cocoa
 
-class ItemsViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
+protocol ItemSelectionDelegate: class {
+    func itemsViewController(_ itemsViewController: ItemsViewController, didSelectItems: [Item])
+}
+
+class ItemsViewController: NSViewController {
 
     fileprivate var items: [Item] = []
+
+    weak var itemSelectionDelegate: ItemSelectionDelegate?
 
     @IBOutlet weak var tableView: NSTableView!
 
@@ -12,6 +18,17 @@ class ItemsViewController: NSViewController, NSTableViewDelegate, NSTableViewDat
         self.items = items
         self.tableView.reloadData()
     }
+
+    /// Wired to `NSTableView.doubleAction` and thus also to `arrowKeyableTextFieldDidCommit`
+    @IBAction func commitSelection(_ sender: NSTableView) {
+        let selectedItems = items.enumerated()
+            .filter { sender.selectedRowIndexes.contains($0.offset) }
+            .map { $0.element }
+        itemSelectionDelegate?.itemsViewController(self, didSelectItems: selectedItems)
+    }
+}
+
+extension ItemsViewController: NSTableViewDelegate, NSTableViewDataSource {
 
     func numberOfRows(in tableView: NSTableView) -> Int {
         return items.count
