@@ -18,6 +18,8 @@
 		5027833723F7DC6600853916 /* FilterWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5027833523F7DC6600853916 /* FilterWindowController.xib */; };
 		5027833923F7DD5200853916 /* FloatingFilterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027833823F7DD5200853916 /* FloatingFilterModule.swift */; };
 		5027833B23F7DEB700853916 /* WindowHoldingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027833A23F7DEB700853916 /* WindowHoldingService.swift */; };
+		5027833D23F7E89600853916 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027833C23F7E89600853916 /* ItemsViewController.swift */; };
+		5027833F23F7EAD200853916 /* ItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027833E23F7EAD200853916 /* ItemCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		5027833523F7DC6600853916 /* FilterWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterWindowController.xib; sourceTree = "<group>"; };
 		5027833823F7DD5200853916 /* FloatingFilterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingFilterModule.swift; sourceTree = "<group>"; };
 		5027833A23F7DEB700853916 /* WindowHoldingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowHoldingService.swift; sourceTree = "<group>"; };
+		5027833C23F7E89600853916 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		5027833E23F7EAD200853916 /* ItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				5027833823F7DD5200853916 /* FloatingFilterModule.swift */,
 				5027833423F7DC6600853916 /* FilterWindowController.swift */,
 				5027833523F7DC6600853916 /* FilterWindowController.xib */,
+				5027833C23F7E89600853916 /* ItemsViewController.swift */,
+				5027833E23F7EAD200853916 /* ItemCellView.swift */,
 				5027833A23F7DEB700853916 /* WindowHoldingService.swift */,
 				5027830623F7D27A00853916 /* Info.plist */,
 			);
@@ -276,8 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5027833D23F7E89600853916 /* ItemsViewController.swift in Sources */,
 				5027833323F7D44D00853916 /* Item.swift in Sources */,
 				5027833923F7DD5200853916 /* FloatingFilterModule.swift in Sources */,
+				5027833F23F7EAD200853916 /* ItemCellView.swift in Sources */,
 				5027833623F7DC6600853916 /* FilterWindowController.swift in Sources */,
 				5027833B23F7DEB700853916 /* WindowHoldingService.swift in Sources */,
 			);
@@ -372,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -429,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;

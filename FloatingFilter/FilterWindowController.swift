@@ -6,6 +6,8 @@ class FilterWindowController: NSWindowController {
 
     static let nibName: NSNib.Name = "FilterWindowController"
 
+    @IBOutlet var itemsViewController: ItemsViewController!
+
     convenience init() {
         self.init(windowNibName: FilterWindowController.nibName)
     }
@@ -21,6 +23,10 @@ class FilterWindowController: NSWindowController {
         super.windowDidLoad()
 
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    }
+
+    func showItems(_ items: [Item]) {
+        itemsViewController.showItems(items)
     }
     
 }

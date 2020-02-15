@@ -6,11 +6,17 @@ import FloatingFilter
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    let items = [
+        Item(title: "You", icon: NSImage(named: NSImage.userName)),
+        Item(title: "Really", icon: NSImage(named: NSImage.preferencesGeneralName)),
+        Item(title: "Rock", icon: NSImage(named: NSImage.folderName))
+    ]
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        FloatingFilterModule.showFilterWindow()
+        FloatingFilterModule.showFilterWindow(items: items)
     }
 
     @IBAction func showPanel(_ sender: Any?) {
-        FloatingFilterModule.showFilterWindow()
+        FloatingFilterModule.showFilterWindow(items: items)
     }
 }
