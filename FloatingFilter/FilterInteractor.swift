@@ -49,26 +49,15 @@ extension FilterInteractor.State {
 
 extension Sequence where Iterator.Element == Item {
     fileprivate func sortedByNormalizedFuzzyMatch(pattern: String) -> [Element] {
-        let normalizedPattern = pattern.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-
-        var result: [Element] = []
-        var indexesAdded: [Int] = []
-
-        // Include and weigh results from a threshold of 1/10 up to 1/3. (Rather strict.)
-        for iteration in (1...3) {
-            let options = FuzzyMatchOptions(threshold: Double(Double(iteration) / Double(10)),
-                                            distance: FuzzyMatchingOptionsDefaultValues.distance.rawValue)
-            for (index, element) in self.enumerated() {
-                if !indexesAdded.contains(index) {
-                    if let _ = element.normalizedTitle.fuzzyMatchPattern(normalizedPattern, loc: nil, options: options) {
-                        result.append(element)
-                        indexesAdded.append(index)
-                    }
-                }
-            }
-        }
-
-        return result
+        // These magic numbers are totally experimental
+        let fuzziness = 0.3
+        let threshold = 0.4
+        
+        return self
+            .map { (element: $0, score: $0.title.score(word: pattern, fuzziness: fuzziness)) }
+            .filter { $0.score > threshold }
+            .sorted(by: { $0.score > $1.score })
+            .map { $0.element }
     }
 }
 
