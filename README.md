@@ -6,8 +6,23 @@
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-Display things in an app-modal floating window that users can filter by typing.
+Display things in an app-modal floating window that users can fuzzy-filter by typing ahead.
 
+![](assets/screenshot-combined.png)
+
+## Installation
+
+### Carthage
+
+Add this to your `Cartfile`:
+
+    github "cleancocoa/FloatingFilter"
+
+Then run 
+
+    $ carthage update
+
+... and include `FloatingFilter.framework` from `Carthage/Build/Mac` in your app. 
 
 ## License
 
