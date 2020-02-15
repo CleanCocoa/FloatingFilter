@@ -3,17 +3,19 @@
 import Cocoa
 
 final class WindowHoldingService {
-    var windowController: NSWindowController? {
+    typealias Payload = (windowController: NSWindowController, disposable: Any)
+
+    var payload: Payload? {
         willSet {
-            guard let existingWindow = windowController?.window else { return }
+            guard let existingWindow = payload?.windowController.window else { return }
             NotificationCenter.default.removeObserver(
                 self, name: NSWindow.willCloseNotification,
                 object: existingWindow)
         }
 
         didSet {
-            guard let windowController = windowController else { return }
-            guard let window = windowController.window else {
+            guard let payload = payload else { return }
+            guard let window = payload.windowController.window else {
                 preconditionFailure("Window controller does not have a window to manage")
             }
             NotificationCenter.default.addObserver(
@@ -23,12 +25,12 @@ final class WindowHoldingService {
         }
     }
 
-    func manage(windowController: NSWindowController) {
-        self.windowController = windowController
+    func manage(_ payload: Payload) {
+        self.payload = payload
     }
 
     @objc func windowDidClose(_ notification: Notification) {
-        self.windowController = nil
+        self.payload = nil
     }
 }
 

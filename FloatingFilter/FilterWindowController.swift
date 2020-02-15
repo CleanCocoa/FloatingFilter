@@ -43,11 +43,22 @@ extension FilterWindowController {
         filterViewController.placeholderText = filterPlaceholderText
     }
 
+    var filterChangeDelegate: FilterChangeDelegate? {
+        get {
+            return filterViewController?.filterChangeDelegate
+        }
+        set {
+            loadWindowIfNeeded()
+            filterViewController.filterChangeDelegate = newValue
+        }
+    }
+}
+
+extension FilterWindowController: FilteredItemView {
     func showItems(_ items: [Item]) {
         loadWindowIfNeeded()
         itemsViewController.showItems(items)
     }
-
 }
 
 // MARK: Close on ESC and other cancelation hotkeys

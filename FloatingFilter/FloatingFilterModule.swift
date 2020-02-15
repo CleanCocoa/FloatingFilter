@@ -14,10 +14,15 @@ public struct FloatingFilterModule {
 
         let windowController = FilterWindowController()
         windowController.configure(filterPlaceholderText: filterPlaceholderText)
-        windowController.showItems(items)
         windowController.showWindow(nil)
         windowController.window?.center()
         windowController.window?.makeKeyAndOrderFront(nil)
-        windowHoldingService.manage(windowController: windowController)
+
+        let interactor = FilterInteractor(view: windowController)
+        interactor.showItems(items)
+
+        windowController.filterChangeDelegate = interactor
+
+        windowHoldingService.manage((windowController, interactor))
     }
 }
