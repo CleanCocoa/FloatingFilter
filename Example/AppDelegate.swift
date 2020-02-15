@@ -9,4 +9,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         FloatingFilterModule.showFilterWindow()
     }
+
+    @IBAction func showPanel(_ sender: Any?) {
+        FloatingFilterModule.showFilterWindow()
+    }
 }
