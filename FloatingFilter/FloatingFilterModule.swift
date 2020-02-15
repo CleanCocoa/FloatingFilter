@@ -24,7 +24,10 @@ public struct FloatingFilterModule {
         let interactor = FilterInteractor(view: windowController)
         interactor.showItems(items)
 
-        let callbackWrapper = CallbackWrapper(selectionCallback: selectionCallback)
+        let callbackWrapper = CallbackWrapper() { items in
+            windowController.close()
+            selectionCallback(items)
+        }
 
         windowController.filterChangeDelegate = interactor
         windowController.itemSelectionDelegate = callbackWrapper
