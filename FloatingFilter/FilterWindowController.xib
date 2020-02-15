@@ -18,6 +18,7 @@
         <viewController id="FBs-ca-rOP" customClass="FilterViewController" customModule="FloatingFilter" customModuleProvider="target">
             <connections>
                 <outlet property="filterTextField" destination="b9Q-lc-NoZ" id="7sO-hE-iwb"/>
+                <outlet property="placeholderLabel" destination="nfn-6K-sh6" id="H1v-LT-Dd0"/>
                 <outlet property="view" destination="b9Q-lc-NoZ" id="egx-1y-165"/>
             </connections>
         </viewController>
@@ -30,8 +31,8 @@
         <window title="Filter" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hidesOnDeactivate="YES" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="0e4-NX-GYB" customClass="KeyPanel" customModule="FloatingFilter" customModuleProvider="target">
             <rect key="contentRect" x="167" y="107" width="628" height="367"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-            <view key="contentView" misplaced="YES" id="lrc-Ix-YZV">
-                <rect key="frame" x="0.0" y="285" width="500" height="82"/>
+            <view key="contentView" id="lrc-Ix-YZV">
+                <rect key="frame" x="0.0" y="0.0" width="500" height="82"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <visualEffectView blendingMode="behindWindow" material="underWindowBackground" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="BW0-FG-fnG">
@@ -122,13 +123,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
-                                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b9Q-lc-NoZ" customClass="AutoGrowingTextField" customModule="FloatingFilter" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="40" width="574" height="26"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Filter Items" usesSingleLineMode="YES" id="Jfk-S4-ZnU">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nfn-6K-sh6">
+                                        <rect key="frame" x="40" y="40" width="446" height="26"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Placeholder here" id="NFg-y2-6dP">
+                                            <font key="font" metaFont="systemLight" size="22"/>
+                                            <color key="textColor" name="placeholderTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="26" translatesAutoresizingMaskIntoConstraints="NO" id="b9Q-lc-NoZ" customClass="AutoGrowingTextField" customModule="FloatingFilter" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="40" width="24" height="26"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" usesSingleLineMode="YES" id="Jfk-S4-ZnU">
                                             <font key="font" metaFont="systemLight" size="22"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
+                                        <connections>
+                                            <outlet property="delegate" destination="FBs-ca-rOP" id="MQ5-Gr-7vI"/>
+                                        </connections>
                                     </textField>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="fpw-KR-xgp">
                                         <rect key="frame" x="8" y="40" width="26" height="26"/>
@@ -142,10 +154,13 @@
                                     <constraint firstItem="fpw-KR-xgp" firstAttribute="top" secondItem="b9Q-lc-NoZ" secondAttribute="top" id="3Ze-jc-l6X"/>
                                     <constraint firstAttribute="trailing" secondItem="IhD-0i-1t4" secondAttribute="trailing" id="5Ru-qo-md5"/>
                                     <constraint firstItem="fpw-KR-xgp" firstAttribute="leading" secondItem="0BH-fJ-6Pq" secondAttribute="leading" constant="8" id="7yg-gG-dJF"/>
+                                    <constraint firstItem="nfn-6K-sh6" firstAttribute="leading" secondItem="b9Q-lc-NoZ" secondAttribute="leading" id="8Rk-Pc-wOj"/>
+                                    <constraint firstAttribute="trailing" secondItem="nfn-6K-sh6" secondAttribute="trailing" constant="16" id="AzI-RB-Nwx"/>
                                     <constraint firstItem="IhD-0i-1t4" firstAttribute="top" secondItem="b9Q-lc-NoZ" secondAttribute="bottom" constant="8" id="F9J-rI-inD"/>
                                     <constraint firstItem="fpw-KR-xgp" firstAttribute="centerY" secondItem="b9Q-lc-NoZ" secondAttribute="centerY" id="SQY-Yv-n2d"/>
                                     <constraint firstAttribute="bottom" secondItem="IhD-0i-1t4" secondAttribute="bottom" id="Vod-63-n29"/>
                                     <constraint firstItem="fpw-KR-xgp" firstAttribute="bottom" secondItem="b9Q-lc-NoZ" secondAttribute="bottom" id="dNr-cw-Lsy"/>
+                                    <constraint firstItem="nfn-6K-sh6" firstAttribute="firstBaseline" secondItem="b9Q-lc-NoZ" secondAttribute="firstBaseline" id="hg6-eb-QN8"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="b9Q-lc-NoZ" secondAttribute="trailing" constant="16" id="qbp-bi-Eah"/>
                                     <constraint firstItem="IhD-0i-1t4" firstAttribute="leading" secondItem="0BH-fJ-6Pq" secondAttribute="leading" id="uTP-T6-CjG"/>
                                     <constraint firstItem="b9Q-lc-NoZ" firstAttribute="top" secondItem="0BH-fJ-6Pq" secondAttribute="top" constant="16" id="z0H-w8-Uam"/>
@@ -172,7 +187,7 @@
                 <outlet property="delegate" destination="-2" id="2NZ-Lr-dft"/>
                 <outlet property="initialFirstResponder" destination="b9Q-lc-NoZ" id="o4Q-0n-ukI"/>
             </connections>
-            <point key="canvasLocation" x="96" y="-195.5"/>
+            <point key="canvasLocation" x="96" y="-196"/>
         </window>
     </objects>
     <resources>

@@ -2,18 +2,27 @@
 
 import Cocoa
 
-class FilterViewController: NSViewController {
+class FilterViewController: NSViewController, NSTextFieldDelegate {
+    @IBOutlet weak var placeholderLabel: NSTextField!
     @IBOutlet weak var filterTextField: NSTextField!
 
     var placeholderText: String? {
         didSet {
             guard isViewLoaded else { return }
-            filterTextField.placeholderString = placeholderText
+            self.placeholderLabel.stringValue = self.placeholderText ?? ""
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.filterTextField.placeholderString = self.placeholderText
+        self.placeholderLabel.stringValue = self.placeholderText ?? ""
+    }
+
+    func controlTextDidChange(_ obj: Notification) {
+        showPlaceholderLabelOnEmptyFilter()
+    }
+
+    private func showPlaceholderLabelOnEmptyFilter() {
+        placeholderLabel.isHidden = !filterTextField.stringValue.isEmpty
     }
 }
