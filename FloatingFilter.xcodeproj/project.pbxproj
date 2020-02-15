@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5027830C23F7D27A00853916 /* FloatingFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5027830223F7D27A00853916 /* FloatingFilter.framework */; };
-		5027831123F7D27A00853916 /* FloatingFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027831023F7D27A00853916 /* FloatingFilterTests.swift */; };
 		5027831323F7D27A00853916 /* FloatingFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5027830523F7D27A00853916 /* FloatingFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5027832523F7D42000853916 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027832423F7D42000853916 /* AppDelegate.swift */; };
 		5027832923F7D42200853916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5027832823F7D42200853916 /* Assets.xcassets */; };
@@ -28,9 +27,9 @@
 		5027834F23F82C9B00853916 /* FilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027834E23F82C9B00853916 /* FilterInteractor.swift */; };
 		5027835123F832C200853916 /* KeyEventForwardingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027835023F832C200853916 /* KeyEventForwardingTableView.swift */; };
 		5027835323F834C900853916 /* NSTableView+sendDoubleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027835223F834C900853916 /* NSTableView+sendDoubleAction.swift */; };
+		5027836123F8382600853916 /* FuzzyMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027836023F8382600853916 /* FuzzyMatching.swift */; };
 		5061FC4023F83BA800020376 /* FloatingFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5027830223F7D27A00853916 /* FloatingFilter.framework */; };
 		5061FC4123F83BA800020376 /* FloatingFilter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5027830223F7D27A00853916 /* FloatingFilter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5027836123F8382600853916 /* FuzzyMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027836023F8382600853916 /* FuzzyMatching.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +68,6 @@
 		5027830523F7D27A00853916 /* FloatingFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloatingFilter.h; sourceTree = "<group>"; };
 		5027830623F7D27A00853916 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5027830B23F7D27A00853916 /* FloatingFilterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FloatingFilterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5027831023F7D27A00853916 /* FloatingFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingFilterTests.swift; sourceTree = "<group>"; };
 		5027831223F7D27A00853916 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5027831C23F7D40200853916 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5027831D23F7D40200853916 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 		5027830F23F7D27A00853916 /* FloatingFilterTests */ = {
 			isa = PBXGroup;
 			children = (
-				5027831023F7D27A00853916 /* FloatingFilterTests.swift */,
 				5027831223F7D27A00853916 /* Info.plist */,
 			);
 			path = FloatingFilterTests;
@@ -381,7 +378,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5027831123F7D27A00853916 /* FloatingFilterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
