@@ -31,24 +31,24 @@
         <window title="Filter" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hidesOnDeactivate="YES" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="0e4-NX-GYB" customClass="KeyPanel" customModule="FloatingFilter" customModuleProvider="target">
             <rect key="contentRect" x="167" y="107" width="628" height="367"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-            <view key="contentView" id="lrc-Ix-YZV">
-                <rect key="frame" x="0.0" y="0.0" width="500" height="82"/>
+            <view key="contentView" misplaced="YES" id="lrc-Ix-YZV">
+                <rect key="frame" x="0.0" y="0.0" width="500" height="350"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <visualEffectView blendingMode="behindWindow" material="underWindowBackground" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="BW0-FG-fnG">
-                        <rect key="frame" x="0.0" y="0.0" width="500" height="82"/>
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="350"/>
                         <subviews>
                             <view translatesAutoresizingMaskIntoConstraints="NO" id="0BH-fJ-6Pq">
-                                <rect key="frame" x="0.0" y="0.0" width="500" height="82"/>
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="350"/>
                                 <subviews>
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhD-0i-1t4">
-                                        <rect key="frame" x="0.0" y="0.0" width="500" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="500" height="300"/>
                                         <clipView key="contentView" drawsBackground="NO" id="ULI-HJ-mzM">
-                                            <rect key="frame" x="0.0" y="0.0" width="500" height="32"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="500" height="300"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="32" usesAutomaticRowHeights="YES" viewBased="YES" floatsGroupRows="NO" id="JsY-Af-sFZ" customClass="KeyEventForwardingTableView" customModule="FloatingFilter" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="500" height="32"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="500" height="300"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
@@ -114,6 +114,7 @@
                                         </clipView>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="500" id="FOY-pY-GlT"/>
+                                            <constraint firstAttribute="height" constant="300" id="qDj-Us-CIh"/>
                                         </constraints>
                                         <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="45x-4A-xoQ">
                                             <rect key="frame" x="0.0" y="16" width="500" height="16"/>
@@ -125,7 +126,7 @@
                                         </scroller>
                                     </scrollView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nfn-6K-sh6">
-                                        <rect key="frame" x="40" y="40" width="446" height="26"/>
+                                        <rect key="frame" x="40" y="308" width="446" height="26"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Placeholder here" id="NFg-y2-6dP">
                                             <font key="font" metaFont="systemLight" size="22"/>
                                             <color key="textColor" name="placeholderTextColor" catalog="System" colorSpace="catalog"/>
@@ -133,7 +134,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="26" translatesAutoresizingMaskIntoConstraints="NO" id="b9Q-lc-NoZ" customClass="ArrowKeyableTextField" customModule="FloatingFilter" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="40" width="24" height="26"/>
+                                        <rect key="frame" x="40" y="308" width="24" height="26"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" usesSingleLineMode="YES" id="Jfk-S4-ZnU">
                                             <font key="font" metaFont="systemLight" size="22"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -145,7 +146,7 @@
                                         </connections>
                                     </textField>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="fpw-KR-xgp">
-                                        <rect key="frame" x="8" y="40" width="26" height="26"/>
+                                        <rect key="frame" x="8" y="308" width="26" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="fpw-KR-xgp" secondAttribute="height" multiplier="1:1" id="OTk-zN-tYj"/>
                                         </constraints>
