@@ -28,6 +28,8 @@
 		5027834F23F82C9B00853916 /* FilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027834E23F82C9B00853916 /* FilterInteractor.swift */; };
 		5027835123F832C200853916 /* KeyEventForwardingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027835023F832C200853916 /* KeyEventForwardingTableView.swift */; };
 		5027835323F834C900853916 /* NSTableView+sendDoubleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027835223F834C900853916 /* NSTableView+sendDoubleAction.swift */; };
+		5061FC4023F83BA800020376 /* FloatingFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5027830223F7D27A00853916 /* FloatingFilter.framework */; };
+		5061FC4123F83BA800020376 /* FloatingFilter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5027830223F7D27A00853916 /* FloatingFilter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,28 @@
 			remoteGlobalIDString = 5027830123F7D27A00853916;
 			remoteInfo = FloatingFilter;
 		};
+		5061FC4223F83BA800020376 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 502782F923F7D27A00853916 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5027830123F7D27A00853916;
+			remoteInfo = FloatingFilter;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5061FC4423F83BA800020376 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5061FC4123F83BA800020376 /* FloatingFilter.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5027830223F7D27A00853916 /* FloatingFilter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FloatingFilter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5061FC4023F83BA800020376 /* FloatingFilter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +131,7 @@
 				5027830F23F7D27A00853916 /* FloatingFilterTests */,
 				5027832323F7D42000853916 /* Example */,
 				5027830323F7D27A00853916 /* Products */,
+				5061FC3F23F83BA800020376 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +206,13 @@
 			path = Items;
 			sourceTree = "<group>";
 		};
+		5061FC3F23F83BA800020376 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -238,10 +270,12 @@
 				5027831E23F7D42000853916 /* Sources */,
 				5027831F23F7D42000853916 /* Frameworks */,
 				5027832023F7D42000853916 /* Resources */,
+				5061FC4423F83BA800020376 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5061FC4323F83BA800020376 /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -362,6 +396,11 @@
 			isa = PBXTargetDependency;
 			target = 5027830123F7D27A00853916 /* FloatingFilter */;
 			targetProxy = 5027830D23F7D27A00853916 /* PBXContainerItemProxy */;
+		};
+		5061FC4323F83BA800020376 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5027830123F7D27A00853916 /* FloatingFilter */;
+			targetProxy = 5061FC4223F83BA800020376 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
