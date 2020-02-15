@@ -14,6 +14,7 @@
 		5027832723F7D42000853916 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027832623F7D42000853916 /* ViewController.swift */; };
 		5027832923F7D42200853916 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5027832823F7D42200853916 /* Assets.xcassets */; };
 		5027832C23F7D42200853916 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5027832A23F7D42200853916 /* Main.storyboard */; };
+		5027833323F7D44D00853916 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027833223F7D44D00853916 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		5027832B23F7D42200853916 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5027832D23F7D42200853916 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5027832E23F7D42200853916 /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
+		5027833223F7D44D00853916 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				5027830523F7D27A00853916 /* FloatingFilter.h */,
+				5027833223F7D44D00853916 /* Item.swift */,
 				5027830623F7D27A00853916 /* Info.plist */,
 			);
 			path = FloatingFilter;
@@ -202,6 +205,7 @@
 				TargetAttributes = {
 					5027830123F7D27A00853916 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					5027830A23F7D27A00853916 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -262,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5027833323F7D44D00853916 /* Item.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +431,7 @@
 		5027831723F7D27A00853916 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -443,6 +449,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.christiantietze.FloatingFilter;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -450,6 +457,7 @@
 		5027831823F7D27A00853916 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -474,6 +482,7 @@
 		5027831A23F7D27A00853916 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FRMDA3XRGC;
@@ -492,6 +501,7 @@
 		5027831B23F7D27A00853916 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = FRMDA3XRGC;
