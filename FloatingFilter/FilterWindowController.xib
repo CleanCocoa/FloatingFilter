@@ -27,20 +27,18 @@
                 <outlet property="view" destination="JsY-Af-sFZ" id="KWk-T8-ZfG"/>
             </connections>
         </viewController>
-        <window title="Filter" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hidesOnDeactivate="YES" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="0e4-NX-GYB" customClass="NSPanel">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+        <window title="Filter" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hidesOnDeactivate="YES" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="0e4-NX-GYB" customClass="KeyPanel" customModule="FloatingFilter" customModuleProvider="target">
             <rect key="contentRect" x="167" y="107" width="628" height="367"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-            <view key="contentView" misplaced="YES" id="lrc-Ix-YZV">
-                <rect key="frame" x="0.0" y="0.0" width="628" height="96"/>
+            <view key="contentView" id="lrc-Ix-YZV">
+                <rect key="frame" x="0.0" y="0.0" width="628" height="82"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <visualEffectView blendingMode="behindWindow" material="underWindowBackground" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="BW0-FG-fnG">
-                        <rect key="frame" x="0.0" y="0.0" width="628" height="92"/>
+                        <rect key="frame" x="0.0" y="0.0" width="628" height="82"/>
                         <subviews>
                             <view translatesAutoresizingMaskIntoConstraints="NO" id="0BH-fJ-6Pq">
-                                <rect key="frame" x="0.0" y="0.0" width="628" height="92"/>
+                                <rect key="frame" x="0.0" y="0.0" width="628" height="82"/>
                                 <subviews>
                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhD-0i-1t4">
                                         <rect key="frame" x="0.0" y="0.0" width="628" height="32"/>
@@ -147,7 +145,7 @@
                                     <constraint firstItem="fpw-KR-xgp" firstAttribute="bottom" secondItem="b9Q-lc-NoZ" secondAttribute="bottom" id="dNr-cw-Lsy"/>
                                     <constraint firstAttribute="trailing" secondItem="b9Q-lc-NoZ" secondAttribute="trailing" constant="16" id="qbp-bi-Eah"/>
                                     <constraint firstItem="IhD-0i-1t4" firstAttribute="leading" secondItem="0BH-fJ-6Pq" secondAttribute="leading" id="uTP-T6-CjG"/>
-                                    <constraint firstItem="b9Q-lc-NoZ" firstAttribute="top" secondItem="0BH-fJ-6Pq" secondAttribute="top" constant="26" id="z0H-w8-Uam"/>
+                                    <constraint firstItem="b9Q-lc-NoZ" firstAttribute="top" secondItem="0BH-fJ-6Pq" secondAttribute="top" constant="16" id="z0H-w8-Uam"/>
                                     <constraint firstItem="b9Q-lc-NoZ" firstAttribute="leading" secondItem="fpw-KR-xgp" secondAttribute="trailing" constant="8" id="z2M-hh-tuk"/>
                                 </constraints>
                             </view>
