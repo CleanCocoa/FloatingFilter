@@ -9,6 +9,13 @@ class FilterWindowController: NSWindowController {
     convenience init() {
         self.init(windowNibName: FilterWindowController.nibName)
     }
+
+    deinit {
+        // Auto-close when deallocating the controller
+        if window != nil {
+            self.close()
+        }
+    }
     
     override func windowDidLoad() {
         super.windowDidLoad()
