@@ -30,6 +30,7 @@
 		5027835323F834C900853916 /* NSTableView+sendDoubleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027835223F834C900853916 /* NSTableView+sendDoubleAction.swift */; };
 		5061FC4023F83BA800020376 /* FloatingFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5027830223F7D27A00853916 /* FloatingFilter.framework */; };
 		5061FC4123F83BA800020376 /* FloatingFilter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5027830223F7D27A00853916 /* FloatingFilter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5027836123F8382600853916 /* FuzzyMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027836023F8382600853916 /* FuzzyMatching.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		5027834E23F82C9B00853916 /* FilterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterInteractor.swift; sourceTree = "<group>"; };
 		5027835023F832C200853916 /* KeyEventForwardingTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyEventForwardingTableView.swift; sourceTree = "<group>"; };
 		5027835223F834C900853916 /* NSTableView+sendDoubleAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTableView+sendDoubleAction.swift"; sourceTree = "<group>"; };
+		5027836023F8382600853916 /* FuzzyMatching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzzyMatching.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				5027833823F7DD5200853916 /* FloatingFilterModule.swift */,
 				5027834E23F82C9B00853916 /* FilterInteractor.swift */,
 				5027833A23F7DEB700853916 /* WindowHoldingService.swift */,
+				5027836023F8382600853916 /* FuzzyMatching.swift */,
 				5027833423F7DC6600853916 /* FilterWindowController.swift */,
 				5027833523F7DC6600853916 /* FilterWindowController.xib */,
 				5027834823F823C700853916 /* Filtering */,
@@ -362,6 +365,7 @@
 				5027833D23F7E89600853916 /* ItemsViewController.swift in Sources */,
 				5027835323F834C900853916 /* NSTableView+sendDoubleAction.swift in Sources */,
 				5027833323F7D44D00853916 /* Item.swift in Sources */,
+				5027836123F8382600853916 /* FuzzyMatching.swift in Sources */,
 				5027833923F7DD5200853916 /* FloatingFilterModule.swift in Sources */,
 				5027834523F818FE00853916 /* AutoGrowingTextField.swift in Sources */,
 				5027833F23F7EAD200853916 /* ItemCellView.swift in Sources */,

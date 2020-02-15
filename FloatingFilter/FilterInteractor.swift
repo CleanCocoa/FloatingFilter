@@ -43,8 +43,32 @@ extension FilterInteractor: FilterChangeDelegate {
 extension FilterInteractor.State {
     fileprivate var filteredItems: [Item] {
         guard !filterPhrase.isEmpty else { return allItems }
-        let normalizedFilterPhrase = self.filterPhrase.lowercased()
-        return allItems.filter { $0.normalizedTitle.contains(normalizedFilterPhrase) }
+        return allItems.sortedByNormalizedFuzzyMatch(pattern: self.filterPhrase)
+    }
+}
+
+extension Sequence where Iterator.Element == Item {
+    fileprivate func sortedByNormalizedFuzzyMatch(pattern: String) -> [Element] {
+        let normalizedPattern = pattern.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+
+        var result: [Element] = []
+        var indexesAdded: [Int] = []
+
+        // Include and weigh results from a threshold of 1/10 up to 1/3. (Rather strict.)
+        for iteration in (1...3) {
+            let options = FuzzyMatchOptions(threshold: Double(Double(iteration) / Double(10)),
+                                            distance: FuzzyMatchingOptionsDefaultValues.distance.rawValue)
+            for (index, element) in self.enumerated() {
+                if !indexesAdded.contains(index) {
+                    if let _ = element.normalizedTitle.fuzzyMatchPattern(normalizedPattern, loc: nil, options: options) {
+                        result.append(element)
+                        indexesAdded.append(index)
+                    }
+                }
+            }
+        }
+
+        return result
     }
 }
 
