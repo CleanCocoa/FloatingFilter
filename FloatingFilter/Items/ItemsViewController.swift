@@ -23,6 +23,10 @@ class ItemsViewController: NSViewController {
         let selectedItems = items.enumerated()
             .filter { sender.selectedRowIndexes.contains($0.offset) }
             .map { $0.element }
+        guard selectedItems.isNotEmpty else {
+            NSSound.beep()
+            return
+        }
         itemSelectionDelegate?.itemsViewController(self, didSelectItems: selectedItems)
     }
 }
@@ -40,5 +44,11 @@ extension ItemsViewController: NSTableViewDelegate, NSTableViewDataSource {
         let cellView = tableView.makeView(withIdentifier: ItemCellView.identifier, owner: self) as? ItemCellView
         cellView?.configure(item: items[row])
         return cellView
+    }
+}
+
+extension Collection {
+    fileprivate var isNotEmpty: Bool {
+        return self.isEmpty == false
     }
 }
