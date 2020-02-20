@@ -7,20 +7,8 @@ import FloatingFilter
 class AppDelegate: NSObject, NSApplicationDelegate {
     let items = [
         Item(identifier: 1, title: "You", icon: NSImage(named: NSImage.userName)),
-        Item(identifier: 2, title: "Really", icon: NSImage(named: NSImage.preferencesGeneralName)),
-        Item(identifier: 3, title: "Rock", icon: NSImage(named: NSImage.folderName)),
-        Item(identifier: 1, title: "You", icon: NSImage(named: NSImage.userName)),
-        Item(identifier: 2, title: "Really", icon: NSImage(named: NSImage.preferencesGeneralName)),
-        Item(identifier: 3, title: "Rock", icon: NSImage(named: NSImage.folderName)),
-        Item(identifier: 1, title: "You", icon: NSImage(named: NSImage.userName)),
-        Item(identifier: 2, title: "Really", icon: NSImage(named: NSImage.preferencesGeneralName)),
-        Item(identifier: 3, title: "Rock", icon: NSImage(named: NSImage.folderName)),
-        Item(identifier: 1, title: "You", icon: NSImage(named: NSImage.userName)),
-        Item(identifier: 2, title: "Really", icon: NSImage(named: NSImage.preferencesGeneralName)),
-        Item(identifier: 3, title: "Rock", icon: NSImage(named: NSImage.folderName)),
-        Item(identifier: 1, title: "You", icon: NSImage(named: NSImage.userName)),
-        Item(identifier: 2, title: "Really", icon: NSImage(named: NSImage.preferencesGeneralName)),
-        Item(identifier: 3, title: "Rock", icon: NSImage(named: NSImage.folderName)),
+        Item(identifier: 2, title: "Really"),
+        Item(identifier: 3, title: "Rock", icon: NSImage(named: NSImage.folderName))
     ]
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {

@@ -13,7 +13,7 @@ public struct Item {
     public let title: String
     public let icon: NSImage?
 
-    public init(identifier: Any? = nil, title: String, icon: NSImage?) {
+    public init(identifier: Any? = nil, title: String, icon: NSImage? = nil) {
         self.identifier = identifier
         self.title = title
         self.icon = icon
