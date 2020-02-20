@@ -148,7 +148,6 @@
 		5027830423F7D27A00853916 /* FloatingFilter */ = {
 			isa = PBXGroup;
 			children = (
-				5027830523F7D27A00853916 /* FloatingFilter.h */,
 				5027833223F7D44D00853916 /* Item.swift */,
 				5027833823F7DD5200853916 /* FloatingFilterModule.swift */,
 				5027834E23F82C9B00853916 /* FilterInteractor.swift */,
@@ -158,6 +157,7 @@
 				5027833523F7DC6600853916 /* FilterWindowController.xib */,
 				5027834823F823C700853916 /* Filtering */,
 				5027834B23F82B6900853916 /* Items */,
+				5027830523F7D27A00853916 /* FloatingFilter.h */,
 				5027834223F8071F00853916 /* Assets.xcassets */,
 				5027830623F7D27A00853916 /* Info.plist */,
 			);

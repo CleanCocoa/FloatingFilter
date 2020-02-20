@@ -10,6 +10,33 @@ Display things in an app-modal floating window that users can fuzzy-filter by ty
 
 ![](assets/screenshot-combined.png)
 
+## Usage
+
+This module strives for taking care of its components's memory wherever possible. This means you do not need to keep a reference to the window or its controller around. **Both will be freed when the action has been completed.**
+
+### When all possible items are known
+
+This is useful if you want to filter e.g. a limited collection of files, like "Recent Files", or to display a lsit of known macros.
+
+
+```swift
+import FloatingFilter
+
+// ... 
+
+let items = [
+    Item(identifier: UUID(),          title: "Create new widget"),
+    Item(identifier: 202002200930,    title: "Open last document"),
+    Item(identifier: "custom-ID_123", title: "Show downloaded data")
+]
+
+
+FloatingFilterModule.showFilterWindow(items: items) { selectedItems in
+    print("Selected:", selectedItems.map { $0.title })
+}
+```
+
+
 ## Installation
 
 ### Carthage
