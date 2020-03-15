@@ -18,8 +18,13 @@ public struct FloatingFilterModule {
         let windowController = FilterWindowController()
         windowController.configure(filterPlaceholderText: filterPlaceholderText)
         windowController.showWindow(nil)
-        windowController.window?.center()
-        windowController.window?.makeKeyAndOrderFront(nil)
+        if let window = windowController.window {
+            window.center()
+            var newOrigin = window.frame.origin
+            newOrigin.y -= (window.frame.height - 30) / 2
+            window.setFrameOrigin(newOrigin)
+            window.makeKeyAndOrderFront(nil)
+        }
 
         let interactor = FilterInteractor(view: windowController)
         interactor.showItems(items)
