@@ -10,6 +10,7 @@
             <connections>
                 <outlet property="filterViewController" destination="FBs-ca-rOP" id="ETL-Gs-eMp"/>
                 <outlet property="itemsViewController" destination="Tkp-3I-IJC" id="veg-yA-3Cu"/>
+                <outlet property="noResultsLabel" destination="jqf-jM-Z1x" id="lYK-3c-pHY"/>
                 <outlet property="window" destination="0e4-NX-GYB" id="vZ1-9k-BcE"/>
             </connections>
         </customObject>
@@ -31,7 +32,7 @@
         <window title="Filter" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hidesOnDeactivate="YES" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="0e4-NX-GYB" customClass="KeyPanel" customModule="FloatingFilter" customModuleProvider="target">
             <rect key="contentRect" x="167" y="107" width="628" height="367"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-            <view key="contentView" misplaced="YES" id="lrc-Ix-YZV">
+            <view key="contentView" id="lrc-Ix-YZV">
                 <rect key="frame" x="0.0" y="0.0" width="500" height="344"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -152,6 +153,14 @@
                                         </constraints>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="search" id="zAQ-Vg-iHS"/>
                                     </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jqf-jM-Z1x">
+                                        <rect key="frame" x="198" y="137" width="104" height="26"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="No Results" id="AKq-mx-Jqn">
+                                            <font key="font" metaFont="system" size="22"/>
+                                            <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="fpw-KR-xgp" firstAttribute="top" secondItem="b9Q-lc-NoZ" secondAttribute="top" id="3Ze-jc-l6X"/>
@@ -163,6 +172,8 @@
                                     <constraint firstItem="fpw-KR-xgp" firstAttribute="centerY" secondItem="b9Q-lc-NoZ" secondAttribute="centerY" id="SQY-Yv-n2d"/>
                                     <constraint firstAttribute="bottom" secondItem="IhD-0i-1t4" secondAttribute="bottom" id="Vod-63-n29"/>
                                     <constraint firstItem="fpw-KR-xgp" firstAttribute="bottom" secondItem="b9Q-lc-NoZ" secondAttribute="bottom" id="dNr-cw-Lsy"/>
+                                    <constraint firstItem="jqf-jM-Z1x" firstAttribute="centerX" secondItem="JsY-Af-sFZ" secondAttribute="centerX" id="erZ-rA-dj2"/>
+                                    <constraint firstItem="jqf-jM-Z1x" firstAttribute="centerY" secondItem="JsY-Af-sFZ" secondAttribute="centerY" id="fz1-aL-HLu"/>
                                     <constraint firstItem="nfn-6K-sh6" firstAttribute="firstBaseline" secondItem="b9Q-lc-NoZ" secondAttribute="firstBaseline" id="hg6-eb-QN8"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="b9Q-lc-NoZ" secondAttribute="trailing" constant="16" id="qbp-bi-Eah"/>
                                     <constraint firstItem="IhD-0i-1t4" firstAttribute="leading" secondItem="0BH-fJ-6Pq" secondAttribute="leading" id="uTP-T6-CjG"/>

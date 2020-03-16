@@ -12,6 +12,7 @@ class FilterWindowController: NSWindowController {
 
     @IBOutlet var filterViewController: FilterViewController!
     @IBOutlet var itemsViewController: ItemsViewController!
+    @IBOutlet weak var noResultsLabel: NSTextField!
 
     convenience init() {
         self.init(windowNibName: FilterWindowController.nibName)
@@ -68,6 +69,7 @@ extension FilterWindowController: FilteredItemView {
     func showItems(_ items: [Item]) {
         loadWindowIfNeeded()
         itemsViewController.showItems(items)
+        noResultsLabel.isHidden = !items.isEmpty
     }
 }
 
