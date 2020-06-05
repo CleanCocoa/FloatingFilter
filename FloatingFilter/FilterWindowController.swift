@@ -14,11 +14,17 @@ class FilterWindowController: NSWindowController {
     @IBOutlet var itemsViewController: ItemsViewController!
     @IBOutlet weak var noResultsLabel: NSTextField!
 
+    private var windowDidLoseFocusObserver: Any?
+
     convenience init() {
         self.init(windowNibName: FilterWindowController.nibName)
     }
 
     deinit {
+        if let observer = windowDidLoseFocusObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
+
         // Auto-close when deallocating the controller
         if window != nil {
             self.close()
@@ -39,9 +45,20 @@ extension FilterWindowController {
         _ = self.window
     }
 
-    func configure(filterPlaceholderText: String) {
+    func configure(filterPlaceholderText: String, windowLevel: NSWindow.Level, closeWhenLosingFocus: Bool) {
         loadWindowIfNeeded()
+
         filterViewController.placeholderText = filterPlaceholderText
+
+        guard let window = self.window else { assertionFailure(); return }
+
+        window.level = windowLevel
+
+        self.windowDidLoseFocusObserver = NotificationCenter.default.addObserver(forName: NSWindow.didResignKeyNotification, object: window, queue: nil) { notification in
+            guard closeWhenLosingFocus else { return }
+            guard let window = notification.object as? NSWindow else { return }
+            window.close()
+        }
     }
 
     var itemSelectionDelegate: ItemSelectionDelegate? {
