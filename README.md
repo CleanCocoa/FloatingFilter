@@ -16,7 +16,7 @@ This module strives for taking care of its components's memory wherever possible
 
 ### When all possible items are known
 
-This is useful if you want to filter e.g. a limited collection of files, like "Recent Files", or to display a lsit of known macros.
+This is useful if you want to filter e.g. a limited collection of files, like "Recent Files", or to display a list of known macros.
 
 
 ```swift
