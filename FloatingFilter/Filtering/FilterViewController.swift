@@ -22,6 +22,7 @@ class FilterViewController: NSViewController, NSTextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.placeholderLabel.stringValue = self.placeholderText ?? ""
+        showPlaceholderLabelOnEmptyFilter()
     }
 
     override func insertText(_ insertString: Any) {

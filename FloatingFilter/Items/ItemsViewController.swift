@@ -12,10 +12,12 @@ class ItemsViewController: NSViewController {
     weak var itemSelectionDelegate: ItemSelectionDelegate?
 
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var returnLabel: NSTextField!
 
     func showItems(_ items: [Item]) {
         self.items = items
         self.tableView.reloadData()
+        showReturnLabelOnNonemptyFilter()
     }
 
     /// Wired to `NSTableView.doubleAction` and thus also to `arrowKeyableTextFieldDidCommit`
@@ -45,6 +47,15 @@ extension ItemsViewController: NSTableViewDelegate, NSTableViewDataSource {
         cellView?.configure(item: items[row])
         return cellView
     }
+
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        showReturnLabelOnNonemptyFilter()
+    }
+
+    private func showReturnLabelOnNonemptyFilter() {
+        returnLabel.isHidden = (tableView.selectedRow == -1)
+    }
+
 }
 
 extension Collection {
