@@ -14,4 +14,6 @@ class KeyEventForwardingTableView: NSTableView {
             super.keyDown(with: event)
         }
     }
+
+    override var mouseDownCanMoveWindow: Bool { true }
 }
