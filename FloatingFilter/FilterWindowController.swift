@@ -42,7 +42,7 @@ class FilterWindowController: NSWindowController {
         window.styleMask.remove(.titled)
         window.backgroundColor = .clear
 
-        visualEffectView.material = .appearanceBased
+        visualEffectView.material = .popover // .popover is less translucent than .hudWindow and matches Spotlight
         visualEffectView.state = .active
         visualEffectView.wantsLayer = true
         visualEffectView.layer?.cornerRadius = 10
