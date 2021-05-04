@@ -10,9 +10,10 @@ class KeyPanel: NSPanel {
 class FilterWindowController: NSWindowController {
     static let nibName: NSNib.Name = "FilterWindowController"
 
+    @IBOutlet var visualEffectView: NSVisualEffectView!
     @IBOutlet var filterViewController: FilterViewController!
     @IBOutlet var itemsViewController: ItemsViewController!
-    @IBOutlet weak var noResultsLabel: NSTextField!
+    @IBOutlet var noResultsLabel: NSTextField!
 
     private var windowDidLoseFocusObserver: Any?
 
@@ -34,7 +35,17 @@ class FilterWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         guard let window = self.window else { assertionFailure(); return }
+
+        // Make sure the window chrome is removed for the rounded corner effect to work properly.
         window.isMovableByWindowBackground = true
+        window.titleVisibility = .hidden
+        window.styleMask.remove(.titled)
+        window.backgroundColor = .clear
+
+        visualEffectView.material = .appearanceBased
+        visualEffectView.state = .active
+        visualEffectView.wantsLayer = true
+        visualEffectView.layer?.cornerRadius = 10
     }
 }
 
