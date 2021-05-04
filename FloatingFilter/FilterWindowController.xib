@@ -136,7 +136,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="26" translatesAutoresizingMaskIntoConstraints="NO" id="b9Q-lc-NoZ" customClass="ArrowKeyableTextField" customModule="FloatingFilter" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="308" width="429" height="26"/>
+                                        <rect key="frame" x="40" y="308" width="425" height="26"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" usesSingleLineMode="YES" id="Jfk-S4-ZnU">
                                             <font key="font" metaFont="systemLight" size="22"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -163,7 +163,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9WC-69-Q0h">
-                                        <rect key="frame" x="473" y="313" width="21" height="17"/>
+                                        <rect key="frame" x="469" y="313" width="21" height="17"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="⮐" id="hLi-gd-0zG">
                                             <font key="font" metaFont="system" size="14"/>
                                             <color key="textColor" name="placeholderTextColor" catalog="System" colorSpace="catalog"/>
@@ -182,7 +182,7 @@
                                     <constraint firstAttribute="bottom" secondItem="IhD-0i-1t4" secondAttribute="bottom" id="Vod-63-n29"/>
                                     <constraint firstItem="fpw-KR-xgp" firstAttribute="bottom" secondItem="b9Q-lc-NoZ" secondAttribute="bottom" id="dNr-cw-Lsy"/>
                                     <constraint firstItem="jqf-jM-Z1x" firstAttribute="centerX" secondItem="JsY-Af-sFZ" secondAttribute="centerX" id="erZ-rA-dj2"/>
-                                    <constraint firstAttribute="trailing" secondItem="9WC-69-Q0h" secondAttribute="trailing" constant="8" id="fei-3r-B5K"/>
+                                    <constraint firstAttribute="trailing" secondItem="9WC-69-Q0h" secondAttribute="trailing" constant="12" id="fei-3r-B5K"/>
                                     <constraint firstItem="jqf-jM-Z1x" firstAttribute="centerY" secondItem="JsY-Af-sFZ" secondAttribute="centerY" id="fz1-aL-HLu"/>
                                     <constraint firstItem="nfn-6K-sh6" firstAttribute="firstBaseline" secondItem="b9Q-lc-NoZ" secondAttribute="firstBaseline" id="hg6-eb-QN8"/>
                                     <constraint firstItem="9WC-69-Q0h" firstAttribute="centerY" secondItem="b9Q-lc-NoZ" secondAttribute="centerY" id="hnt-Cn-vAt"/>
