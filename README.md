@@ -6,9 +6,11 @@
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-Display things in an app-modal floating window that users can fuzzy-filter by typing ahead.
+Display things in an app-modal floating window that users can fuzzy-filter by typing ahead. Its style roughly matches the floating Spotlight window.
 
 ![](assets/screenshot-combined.png)
+
+The list uses the default `NSTableView` styles, so it'll look right at home on Big Sur and older macOS versions alike!
 
 ## Usage
 
@@ -22,7 +24,7 @@ This is useful if you want to filter e.g. a limited collection of files, like "R
 ```swift
 import FloatingFilter
 
-// ... 
+// ...
 
 let items = [
     Item(identifier: UUID(),          title: "Create new widget"),
@@ -45,11 +47,11 @@ Add this to your `Cartfile`:
 
     github "cleancocoa/FloatingFilter"
 
-Then run 
+Then run
 
     $ carthage update
 
-... and include `FloatingFilter.framework` from `Carthage/Build/Mac` in your app. 
+... and include `FloatingFilter.framework` from `Carthage/Build/Mac` in your app.
 
 ## License
 
