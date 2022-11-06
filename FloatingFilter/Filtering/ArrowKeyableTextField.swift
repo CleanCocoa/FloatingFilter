@@ -32,7 +32,7 @@ class ArrowKeyableTextField: AutoGrowingTextField, NSTextViewDelegate {
             ?? false
     }
 
-    func doMovementCommand(commandSelector: Selector) -> Bool {
+    private func doMovementCommand(commandSelector: Selector) -> Bool {
         guard let delegate = self.arrowKeyableDelegate else { return false }
 
         switch commandSelector {
