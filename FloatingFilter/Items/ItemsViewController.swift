@@ -2,7 +2,7 @@
 
 import Cocoa
 
-protocol ItemSelectionDelegate: class {
+protocol ItemSelectionDelegate: AnyObject {
     func itemsViewController(_ itemsViewController: ItemsViewController, didSelectItems selectedItems: [Item])
 }
 
