@@ -19,6 +19,15 @@ class FilterViewController: NSViewController, NSTextFieldDelegate {
         }
     }
 
+    override func supplementalTarget(forAction action: Selector, sender: Any?) -> Any? {
+        switch action {
+        case #selector(NSWindow.performClose(_:)):
+            return self.view.window?.windowController
+        default:
+            return super.supplementalTarget(forAction: action, sender: sender)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.placeholderLabel.stringValue = self.placeholderText ?? ""

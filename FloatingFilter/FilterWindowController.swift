@@ -112,6 +112,11 @@ extension FilterWindowController {
     @IBAction func cancel(_ sender: Any?) {
         self.close()
     }
+
+    /// Declare ⌘W "Close" default handler.
+    @IBAction func performClose(_ sender: Any?) {
+        self.close()
+    }
 }
 
 // MARK: Typing
