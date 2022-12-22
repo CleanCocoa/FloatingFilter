@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -33,7 +32,7 @@
         </viewController>
         <window title="Filter" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hidesOnDeactivate="YES" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="0e4-NX-GYB" customClass="KeyPanel" customModule="FloatingFilter" customModuleProvider="target">
             <rect key="contentRect" x="167" y="107" width="628" height="367"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2048" height="1127"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="3440" height="1415"/>
             <view key="contentView" id="lrc-Ix-YZV">
                 <rect key="frame" x="0.0" y="0.0" width="500" height="344"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -213,7 +212,7 @@
                 <outlet property="delegate" destination="-2" id="2NZ-Lr-dft"/>
                 <outlet property="initialFirstResponder" destination="b9Q-lc-NoZ" id="o4Q-0n-ukI"/>
             </connections>
-            <point key="canvasLocation" x="96" y="-196"/>
+            <point key="canvasLocation" x="168" y="-710"/>
         </window>
     </objects>
     <resources>
