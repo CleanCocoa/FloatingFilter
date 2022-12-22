@@ -2,7 +2,7 @@
 
 import Cocoa
 
-protocol FilterChangeDelegate: class {
+protocol FilterChangeDelegate: AnyObject {
     func filterStringDidChange(string: String)
 }
 

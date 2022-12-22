@@ -2,7 +2,7 @@
 
 import Cocoa
 
-@objc protocol ArrowKeyableTextFieldDelegate: class {
+@objc protocol ArrowKeyableTextFieldDelegate: AnyObject {
     func arrowKeyableTextFieldDidCommit(_ textField: ArrowKeyableTextField)
 
     func arrowKeyableTextFieldSelectFirst(_ textField: ArrowKeyableTextField)
