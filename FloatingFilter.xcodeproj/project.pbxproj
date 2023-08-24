@@ -161,7 +161,8 @@
 				5027834223F8071F00853916 /* Assets.xcassets */,
 				5027830623F7D27A00853916 /* Info.plist */,
 			);
-			path = FloatingFilter;
+			name = FloatingFilter;
+			path = Sources/FloatingFilter;
 			sourceTree = "<group>";
 		};
 		5027830F23F7D27A00853916 /* FloatingFilterTests */ = {
@@ -169,7 +170,8 @@
 			children = (
 				5027831223F7D27A00853916 /* Info.plist */,
 			);
-			path = FloatingFilterTests;
+			name = FloatingFilterTests;
+			path = Tests/FloatingFilterTests;
 			sourceTree = "<group>";
 		};
 		5027832323F7D42000853916 /* Example */ = {
@@ -551,7 +553,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = FloatingFilter/Info.plist;
+				INFOPLIST_FILE = Sources/FloatingFilter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -578,7 +580,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = FloatingFilter/Info.plist;
+				INFOPLIST_FILE = Sources/FloatingFilter/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
