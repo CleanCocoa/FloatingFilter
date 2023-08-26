@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="FilterViewController" customModule="FloatingFilter" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="FilterViewController">
             <connections>
                 <outlet property="filterTextField" destination="xmj-Bc-PWu" id="CzP-gr-289"/>
                 <outlet property="placeholderLabel" destination="jVm-2o-FsJ" id="u0m-LQ-Xad"/>
@@ -27,7 +28,7 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="26" translatesAutoresizingMaskIntoConstraints="NO" id="xmj-Bc-PWu" customClass="ArrowKeyableTextField" customModule="FloatingFilter" customModuleProvider="target">
+                <textField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="26" translatesAutoresizingMaskIntoConstraints="NO" id="xmj-Bc-PWu" customClass="ArrowKeyableTextField" customModule="FloatingFilter">
                     <rect key="frame" x="40" y="10" width="425" height="26"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" usesSingleLineMode="YES" id="nxP-pT-ehm">
                         <font key="font" metaFont="systemLight" size="22"/>

@@ -16,7 +16,8 @@ let package = Package(
         .target(
             name: "FloatingFilter",
             resources: [
-                .process("Resources/FilterWindowController.xib"),
+                .process("Resources/FilterViewController.xib"),
+                .process("Resources/ItemsViewController.xib"),
                 .process("Resources/Assets.xcassets"),
             ]),
         .testTarget(
