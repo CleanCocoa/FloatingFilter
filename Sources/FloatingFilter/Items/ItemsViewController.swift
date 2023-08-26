@@ -2,34 +2,36 @@
 
 import Cocoa
 
-protocol ItemSelectionDelegate: AnyObject {
-    func itemsViewController(_ itemsViewController: ItemsViewController, didSelectItems selectedItems: [Item])
-}
-
 class ItemsViewController: NSViewController {
     fileprivate var items: [Item] = []
 
-    weak var itemSelectionDelegate: ItemSelectionDelegate?
+    var commitSelection: ((_ selectedItems: [Item]) -> Void)?
+    var selectionChange: ((_ selectedItems: [Item]) -> Void)?
 
-    @IBOutlet weak var tableView: NSTableView!
-    @IBOutlet weak var returnLabel: NSTextField!
+    @IBOutlet var tableView: NSTableView!
+    @IBOutlet var noResultsLabel: NSTextField!
+
+    fileprivate func selectedItems() -> [Item] {
+        items.indexed()
+            .filter { tableView.selectedRowIndexes.contains($0.index) }
+            .map { $0.element }
+    }
 
     func showItems(_ items: [Item]) {
         self.items = items
         self.tableView.reloadData()
-        showReturnLabelOnNonemptyFilter()
+        self.selectionChange?(selectedItems())
+        self.noResultsLabel.isHidden = !items.isEmpty
     }
 
     /// Wired to `NSTableView.doubleAction` and thus also to `arrowKeyableTextFieldDidCommit`
     @IBAction func commitSelection(_ sender: NSTableView) {
-        let selectedItems = items.enumerated()
-            .filter { sender.selectedRowIndexes.contains($0.offset) }
-            .map { $0.element }
+        let selectedItems = self.selectedItems()
         guard selectedItems.isNotEmpty else {
             NSSound.beep()
             return
         }
-        itemSelectionDelegate?.itemsViewController(self, didSelectItems: selectedItems)
+        self.commitSelection?(selectedItems)
     }
 }
 
@@ -49,13 +51,8 @@ extension ItemsViewController: NSTableViewDelegate, NSTableViewDataSource {
     }
 
     func tableViewSelectionDidChange(_ notification: Notification) {
-        showReturnLabelOnNonemptyFilter()
+        self.selectionChange?(self.selectedItems())
     }
-
-    private func showReturnLabelOnNonemptyFilter() {
-        returnLabel.isHidden = (tableView.selectedRow == -1)
-    }
-
 }
 
 extension Collection {

@@ -1,10 +1,12 @@
 //
-//  Based on string_score 0.1.21 by Joshaven Potter.
-//  https://github.com/joshaven/string_score/
+//  <https://github.com/yichizhang/SwiftyStringScore>
 //
 //  Copyright (c) 2016-present YICHI ZHANG
 //  https://github.com/yichizhang
 //  zhang-yi-chi@hotmail.com
+//
+//  Based on string_score 0.1.21 by Joshaven Potter.
+//  https://github.com/joshaven/string_score/
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
 //  copy of this software and associated documentation files (the "Software"),
@@ -38,7 +40,7 @@ private extension String {
   }
 }
 
-public extension String {
+extension String {
 
   func score(word: String, fuzziness: Double? = nil) -> Double {
 

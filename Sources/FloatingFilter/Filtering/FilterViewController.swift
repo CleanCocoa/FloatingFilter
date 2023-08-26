@@ -8,7 +8,8 @@ protocol FilterChangeDelegate: AnyObject {
 
 class FilterViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var placeholderLabel: NSTextField!
-    @IBOutlet weak var filterTextField: NSTextField!
+    @IBOutlet weak var filterTextField: ArrowKeyableTextField!
+    @IBOutlet weak var returnLabel: NSTextField!
 
     weak var filterChangeDelegate: FilterChangeDelegate?
 
@@ -32,6 +33,7 @@ class FilterViewController: NSViewController, NSTextFieldDelegate {
         super.viewDidLoad()
         self.placeholderLabel.stringValue = self.placeholderText ?? ""
         showPlaceholderLabelOnEmptyFilter()
+        changeReturnLabelVisibility(selectionIsEmpty: true)
     }
 
     override func insertText(_ insertString: Any) {
@@ -47,6 +49,10 @@ class FilterViewController: NSViewController, NSTextFieldDelegate {
 
     private func showPlaceholderLabelOnEmptyFilter() {
         placeholderLabel.isHidden = !filterTextField.stringValue.isEmpty
+    }
+
+    func changeReturnLabelVisibility(selectionIsEmpty: Bool) {
+        returnLabel.isHidden = selectionIsEmpty
     }
 
     private func forwardFilterChange() {

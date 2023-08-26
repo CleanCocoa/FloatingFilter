@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="FilterViewController">
+            <connections>
+                <outlet property="filterTextField" destination="xmj-Bc-PWu" id="CzP-gr-289"/>
+                <outlet property="placeholderLabel" destination="jVm-2o-FsJ" id="u0m-LQ-Xad"/>
+                <outlet property="returnLabel" destination="GxZ-nw-pHp" id="Vah-ew-tl6"/>
+                <outlet property="view" destination="Vsq-6X-Df3" id="bbv-3r-OrX"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <view id="Vsq-6X-Df3">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="46"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jVm-2o-FsJ">
+                    <rect key="frame" x="40" y="10" width="446" height="26"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Placeholder here" id="kxR-Gs-ZF0">
+                        <font key="font" metaFont="systemLight" size="22"/>
+                        <color key="textColor" name="placeholderTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="26" translatesAutoresizingMaskIntoConstraints="NO" id="xmj-Bc-PWu" customClass="ArrowKeyableTextField" customModule="FloatingFilter">
+                    <rect key="frame" x="40" y="10" width="425" height="26"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" usesSingleLineMode="YES" id="nxP-pT-ehm">
+                        <font key="font" metaFont="systemLight" size="22"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <outlet property="delegate" destination="-2" id="CW8-ss-yCp"/>
+                    </connections>
+                </textField>
+                <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="9VQ-Dr-vAP">
+                    <rect key="frame" x="8" y="10" width="26" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="9VQ-Dr-vAP" secondAttribute="height" multiplier="1:1" id="Bi7-90-QCw"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="search" id="kxD-0o-Q3I"/>
+                </imageView>
+                <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GxZ-nw-pHp">
+                    <rect key="frame" x="469" y="15" width="21" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="⮐" id="aAb-SX-OJF">
+                        <font key="font" metaFont="system" size="14"/>
+                        <color key="textColor" name="placeholderTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="jVm-2o-FsJ" firstAttribute="firstBaseline" secondItem="xmj-Bc-PWu" secondAttribute="firstBaseline" id="2xa-7S-SNj"/>
+                <constraint firstItem="9VQ-Dr-vAP" firstAttribute="bottom" secondItem="xmj-Bc-PWu" secondAttribute="bottom" id="8Hs-ZD-fGt"/>
+                <constraint firstItem="9VQ-Dr-vAP" firstAttribute="top" secondItem="xmj-Bc-PWu" secondAttribute="top" id="8k5-Wm-bjx"/>
+                <constraint firstItem="9VQ-Dr-vAP" firstAttribute="leading" secondItem="Vsq-6X-Df3" secondAttribute="leading" constant="8" id="Byz-Je-jX6"/>
+                <constraint firstAttribute="trailing" secondItem="jVm-2o-FsJ" secondAttribute="trailing" constant="16" id="DvS-Jo-R7w"/>
+                <constraint firstAttribute="trailing" secondItem="GxZ-nw-pHp" secondAttribute="trailing" constant="12" id="LTC-CO-eAU"/>
+                <constraint firstItem="jVm-2o-FsJ" firstAttribute="leading" secondItem="xmj-Bc-PWu" secondAttribute="leading" id="M5Z-xx-x9S"/>
+                <constraint firstItem="GxZ-nw-pHp" firstAttribute="centerY" secondItem="xmj-Bc-PWu" secondAttribute="centerY" id="dZF-rb-UPU"/>
+                <constraint firstItem="9VQ-Dr-vAP" firstAttribute="centerY" secondItem="xmj-Bc-PWu" secondAttribute="centerY" id="ex5-1F-mJJ"/>
+                <constraint firstItem="GxZ-nw-pHp" firstAttribute="leading" secondItem="xmj-Bc-PWu" secondAttribute="trailing" constant="8" id="lf6-J1-K2T"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xmj-Bc-PWu" secondAttribute="trailing" constant="16" id="o6e-ff-gLq"/>
+                <constraint firstItem="xmj-Bc-PWu" firstAttribute="top" secondItem="Vsq-6X-Df3" secondAttribute="top" constant="10" id="rGJ-kd-dba"/>
+                <constraint firstItem="xmj-Bc-PWu" firstAttribute="leading" secondItem="9VQ-Dr-vAP" secondAttribute="trailing" constant="8" id="uLK-Wq-wmH"/>
+                <constraint firstAttribute="bottom" secondItem="xmj-Bc-PWu" secondAttribute="bottom" constant="10" id="wdv-Tj-Hbx"/>
+            </constraints>
+            <point key="canvasLocation" x="8" y="-1119"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="search" width="64" height="64"/>
+    </resources>
+</document>

@@ -5,7 +5,7 @@ import AppKit
 /// Used to manage an optional, auto-released window controller
 private var windowHoldingService = WindowHoldingService()
 
-public typealias SelectionCallback = ([Item]) -> Void
+public typealias SelectionCallback = (_ selectedItems: [Item]) -> Void
 
 public struct FloatingFilterModule {
     private init() { }
@@ -15,8 +15,8 @@ public struct FloatingFilterModule {
         filterPlaceholderText: String = NSLocalizedString("Filter Items", comment: "Placeholder for the FloatingFilter text field"),
         windowLevel: NSWindow.Level = .floating,
         closeWhenLosingFocus: Bool = true,
-        selectionCallback: @escaping SelectionCallback) {
-
+        selection selectionCallback: @escaping SelectionCallback
+    ) {
         let windowController = FilterWindowController()
         windowController.configure(
             filterPlaceholderText: filterPlaceholderText,
@@ -37,28 +37,14 @@ public struct FloatingFilterModule {
         let interactor = FilterInteractor(view: windowController)
         interactor.showItems(items)
 
-        let callbackWrapper = CallbackWrapper() { items in
-            windowController.close()
-            selectionCallback(items)
-        }
-
         windowController.filterChangeDelegate = interactor
-        windowController.itemSelectionDelegate = callbackWrapper
+        windowController.commitSelection = { selectedItems in
+            windowController.close()
+            selectionCallback(selectedItems)
+        }
 
         windowHoldingService.manage((
             windowController: windowController,
-            disposable: (interactor, callbackWrapper)))
-    }
-}
-
-final class CallbackWrapper: ItemSelectionDelegate {
-    let selectionCallback: SelectionCallback
-
-    init(selectionCallback: @escaping SelectionCallback) {
-        self.selectionCallback = selectionCallback
-    }
-
-    func itemsViewController(_ itemsViewController: ItemsViewController, didSelectItems selectedItems: [Item]) {
-        self.selectionCallback(selectedItems)
+            disposable: interactor))
     }
 }
