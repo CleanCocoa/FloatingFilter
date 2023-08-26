@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ItemsViewController" customModule="FloatingFilter" customModuleProvider="target">
             <connections>
+                <outlet property="noResultsLabel" destination="WAO-cR-Ksc" id="8P2-QZ-1bc"/>
                 <outlet property="tableView" destination="m7u-un-Ezb" id="PT7-fg-53k"/>
                 <outlet property="view" destination="GRx-7A-eMV" id="5q8-Mp-1Wh"/>
             </connections>
@@ -100,10 +101,21 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
+                <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="WAO-cR-Ksc">
+                    <rect key="frame" x="196" y="137" width="107" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="No Results" id="hxJ-rq-Hbc">
+                        <font key="font" metaFont="system" size="22"/>
+                        <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
+                <constraint firstItem="WAO-cR-Ksc" firstAttribute="centerX" secondItem="CFv-YA-6x5" secondAttribute="centerX" id="2Ds-eb-pKu"/>
                 <constraint firstAttribute="bottom" secondItem="CFv-YA-6x5" secondAttribute="bottom" id="33W-Og-sph"/>
                 <constraint firstItem="CFv-YA-6x5" firstAttribute="leading" secondItem="GRx-7A-eMV" secondAttribute="leading" id="3HQ-oh-9pK"/>
+                <constraint firstItem="WAO-cR-Ksc" firstAttribute="centerY" secondItem="CFv-YA-6x5" secondAttribute="centerY" id="CQC-hH-gNl"/>
                 <constraint firstItem="CFv-YA-6x5" firstAttribute="top" secondItem="GRx-7A-eMV" secondAttribute="top" id="c5u-N8-4bW"/>
                 <constraint firstAttribute="trailing" secondItem="CFv-YA-6x5" secondAttribute="trailing" id="fcJ-T1-H95"/>
             </constraints>

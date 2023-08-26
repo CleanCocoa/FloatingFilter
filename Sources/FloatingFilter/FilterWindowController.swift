@@ -14,7 +14,6 @@ class FilterWindowController: NSWindowController, NSWindowDelegate {
     @IBOutlet var listContainerView: NSView!
     @IBOutlet var filterViewController: FilterViewController!
     lazy var itemsViewController = ItemsViewController(nibName: "ItemsViewController", bundle: .current())
-    @IBOutlet var noResultsLabel: NSTextField!
 
     private var windowDidLoseFocusObserver: Any?
 
@@ -120,7 +119,6 @@ extension FilterWindowController: FilteredItemView {
     func showItems(_ items: [Item]) {
         loadWindowIfNeeded()
         itemsViewController.showItems(items)
-        noResultsLabel.isHidden = !items.isEmpty
     }
 }
 

@@ -10,7 +10,6 @@
                 <outlet property="containerView" destination="0BH-fJ-6Pq" id="6eU-Ib-QRe"/>
                 <outlet property="filterViewController" destination="FBs-ca-rOP" id="ETL-Gs-eMp"/>
                 <outlet property="listContainerView" destination="cUS-QZ-Rk1" id="8sJ-nt-YBp"/>
-                <outlet property="noResultsLabel" destination="jqf-jM-Z1x" id="lYK-3c-pHY"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -60,14 +59,6 @@
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="search" id="zAQ-Vg-iHS"/>
                 </imageView>
-                <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jqf-jM-Z1x">
-                    <rect key="frame" x="197" y="137" width="107" height="26"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="No Results" id="AKq-mx-Jqn">
-                        <font key="font" metaFont="system" size="22"/>
-                        <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9WC-69-Q0h">
                     <rect key="frame" x="469" y="313" width="21" height="17"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="⮐" id="hLi-gd-0zG">
@@ -82,8 +73,6 @@
                 <constraint firstItem="fpw-KR-xgp" firstAttribute="leading" secondItem="0BH-fJ-6Pq" secondAttribute="leading" constant="8" id="7yg-gG-dJF"/>
                 <constraint firstItem="nfn-6K-sh6" firstAttribute="leading" secondItem="b9Q-lc-NoZ" secondAttribute="leading" id="8Rk-Pc-wOj"/>
                 <constraint firstAttribute="trailing" secondItem="nfn-6K-sh6" secondAttribute="trailing" constant="16" id="AzI-RB-Nwx"/>
-                <constraint firstItem="jqf-jM-Z1x" firstAttribute="centerX" secondItem="cUS-QZ-Rk1" secondAttribute="centerX" id="J2S-4O-DhM"/>
-                <constraint firstItem="jqf-jM-Z1x" firstAttribute="centerY" secondItem="cUS-QZ-Rk1" secondAttribute="centerY" id="KeP-Ep-c0N"/>
                 <constraint firstItem="fpw-KR-xgp" firstAttribute="centerY" secondItem="b9Q-lc-NoZ" secondAttribute="centerY" id="SQY-Yv-n2d"/>
                 <constraint firstItem="cUS-QZ-Rk1" firstAttribute="top" secondItem="nfn-6K-sh6" secondAttribute="bottom" constant="8" id="UBw-U4-J2J"/>
                 <constraint firstItem="cUS-QZ-Rk1" firstAttribute="leading" secondItem="0BH-fJ-6Pq" secondAttribute="leading" id="YTi-02-5kl"/>

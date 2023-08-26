@@ -8,7 +8,8 @@ class ItemsViewController: NSViewController {
     var commitSelection: ((_ selectedItems: [Item]) -> Void)?
     var selectionChange: ((_ selectedItems: [Item]) -> Void)?
 
-    @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet var tableView: NSTableView!
+    @IBOutlet var noResultsLabel: NSTextField!
 
     fileprivate func selectedItems() -> [Item] {
         items.indexed()
@@ -20,6 +21,7 @@ class ItemsViewController: NSViewController {
         self.items = items
         self.tableView.reloadData()
         self.selectionChange?(selectedItems())
+        self.noResultsLabel.isHidden = !items.isEmpty
     }
 
     /// Wired to `NSTableView.doubleAction` and thus also to `arrowKeyableTextFieldDidCommit`
