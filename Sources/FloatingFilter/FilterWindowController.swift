@@ -7,10 +7,10 @@ class KeyPanel: NSPanel {
     override var canBecomeMain: Bool { return true }
 }
 
-class FilterWindowController: NSWindowController {
+class FilterWindowController: NSWindowController, NSWindowDelegate {
     static let nibName: NSNib.Name = "FilterWindowController"
 
-    @IBOutlet var visualEffectView: NSVisualEffectView!
+    @IBOutlet var containerView: NSView!
     @IBOutlet var filterViewController: FilterViewController!
     @IBOutlet var itemsViewController: ItemsViewController!
     @IBOutlet var noResultsLabel: NSTextField!
@@ -31,26 +31,39 @@ class FilterWindowController: NSWindowController {
             self.close()
         }
     }
-    
-    override func windowDidLoad() {
-        super.windowDidLoad()
-        guard let window = self.window else { assertionFailure(); return }
+
+    override func loadWindow() {
+        super.loadWindow()
+
+        let window = KeyPanel()
 
         // Make sure the window chrome is removed for the rounded corner effect to work properly.
+        window.styleMask = []
         window.isMovableByWindowBackground = true
         window.titleVisibility = .hidden
-        window.styleMask.remove(.titled)
         window.backgroundColor = .clear
 
+        window.isRestorable = false
+        self.window = window
+        window.delegate = self
+
+        let visualEffectView = NSVisualEffectView()
         visualEffectView.material = .popover // .popover is less translucent than .hudWindow and matches Spotlight
         visualEffectView.state = .active
         visualEffectView.wantsLayer = true
         visualEffectView.layer?.cornerRadius = 10
+        window.contentView?.addSubview(visualEffectView)
+        visualEffectView.addConstraintsToFillSuperview()
+
+        window.contentView?.addSubview(containerView)
+        containerView.addConstraintsToFillSuperview()
 
         itemsViewController.selectionChange = { [weak self] selectedItems in
             guard let filterViewController = self?.filterViewController else { return }
             filterViewController.changeReturnLabelVisibility(selectionIsEmpty: selectedItems.isEmpty)
         }
+
+        window.initialFirstResponder = filterViewController.filterTextField
     }
 }
 
