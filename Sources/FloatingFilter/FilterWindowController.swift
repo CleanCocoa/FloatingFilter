@@ -11,8 +11,9 @@ class FilterWindowController: NSWindowController, NSWindowDelegate {
     static let nibName: NSNib.Name = "FilterWindowController"
 
     @IBOutlet var containerView: NSView!
+    @IBOutlet var listContainerView: NSView!
     @IBOutlet var filterViewController: FilterViewController!
-    @IBOutlet var itemsViewController: ItemsViewController!
+    lazy var itemsViewController = ItemsViewController(nibName: "ItemsViewController", bundle: .current())
     @IBOutlet var noResultsLabel: NSTextField!
 
     private var windowDidLoseFocusObserver: Any?
@@ -58,12 +59,16 @@ class FilterWindowController: NSWindowController, NSWindowDelegate {
         window.contentView?.addSubview(containerView)
         containerView.addConstraintsToFillSuperview()
 
+        listContainerView.addSubview(itemsViewController.view)
+        itemsViewController.view.addConstraintsToFillSuperview()
+
         itemsViewController.selectionChange = { [weak self] selectedItems in
             guard let filterViewController = self?.filterViewController else { return }
             filterViewController.changeReturnLabelVisibility(selectionIsEmpty: selectedItems.isEmpty)
         }
 
         window.initialFirstResponder = filterViewController.filterTextField
+        filterViewController.filterTextField.arrowKeyableDelegate = itemsViewController.tableView
     }
 }
 
@@ -92,7 +97,7 @@ extension FilterWindowController {
 
     var commitSelection: ((_ selectedItems: [Item]) -> Void)? {
         get {
-            return itemsViewController?.commitSelection
+            return itemsViewController.commitSelection
         }
         set {
             loadWindowIfNeeded()
