@@ -22,8 +22,8 @@ class ItemsViewController: NSViewController {
 
     /// Wired to `NSTableView.doubleAction` and thus also to `arrowKeyableTextFieldDidCommit`
     @IBAction func commitSelection(_ sender: NSTableView) {
-        let selectedItems = items.enumerated()
-            .filter { sender.selectedRowIndexes.contains($0.offset) }
+        let selectedItems = items.indexed()
+            .filter { sender.selectedRowIndexes.contains($0.index) }
             .map { $0.element }
         guard selectedItems.isNotEmpty else {
             NSSound.beep()
