@@ -8,18 +8,62 @@ class KeyPanel: NSPanel {
 }
 
 class FilterWindowController: NSWindowController, NSWindowDelegate {
-    static let nibName: NSNib.Name = "FilterWindowController"
-
-    @IBOutlet var containerView: NSView!
-    @IBOutlet var listContainerView: NSView!
-    @IBOutlet var filterViewController: FilterViewController!
+    lazy var filterViewController = FilterViewController(nibName: "FilterViewController", bundle: .current())
     lazy var itemsViewController = ItemsViewController(nibName: "ItemsViewController", bundle: .current())
 
     private var windowDidLoseFocusObserver: Any?
 
-    convenience init() {
-        self.init(windowNibName: FilterWindowController.nibName)
+    init() {
+        let window = KeyPanel()
+
+        // Make sure the window chrome is removed for the rounded corner effect to work properly.
+        window.styleMask = []
+        window.isMovableByWindowBackground = true
+        window.titleVisibility = .hidden
+        window.backgroundColor = .clear
+
+        window.isRestorable = false
+        super.init(window: window)
+        window.delegate = self
+
+        // MARK: NSVisualEffectView for Spotlight-like appearance
+        let visualEffectView = NSVisualEffectView()
+        visualEffectView.material = .popover // .popover is less translucent than .hudWindow and matches Spotlight
+        visualEffectView.state = .active
+        visualEffectView.wantsLayer = true
+        visualEffectView.layer?.cornerRadius = 10
+        window.contentView?.addSubview(visualEffectView)
+        visualEffectView.addConstraintsToFillSuperview()
+
+        // MARK: Content stack
+        let containerStackView = NSStackView(
+            orientation: .vertical,
+            alignment: .leading,
+            spacing: 0,
+            views: [
+                filterViewController.view,
+                itemsViewController.view,
+            ])
+        // Make stacked views 100% width.
+        NSLayoutConstraint.activate([
+            filterViewController.view.widthAnchor.constraint(equalTo: containerStackView.widthAnchor),
+            itemsViewController.view.widthAnchor.constraint(equalTo: containerStackView.widthAnchor),
+        ])
+        window.contentView?.addSubview(containerStackView)
+        containerStackView.addConstraintsToFillSuperview()
+
+        // MARK: Wiring component delegates
+        itemsViewController.selectionChange = { [weak self] selectedItems in
+            guard let filterViewController = self?.filterViewController else { return }
+            filterViewController.changeReturnLabelVisibility(selectionIsEmpty: selectedItems.isEmpty)
+        }
+
+        window.initialFirstResponder = filterViewController.filterTextField
+        filterViewController.filterTextField.arrowKeyableDelegate = itemsViewController.tableView
     }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) { fatalError() }
 
     deinit {
         if let observer = windowDidLoseFocusObserver {
@@ -30,44 +74,6 @@ class FilterWindowController: NSWindowController, NSWindowDelegate {
         if window != nil {
             self.close()
         }
-    }
-
-    override func loadWindow() {
-        super.loadWindow()
-
-        let window = KeyPanel()
-
-        // Make sure the window chrome is removed for the rounded corner effect to work properly.
-        window.styleMask = []
-        window.isMovableByWindowBackground = true
-        window.titleVisibility = .hidden
-        window.backgroundColor = .clear
-
-        window.isRestorable = false
-        self.window = window
-        window.delegate = self
-
-        let visualEffectView = NSVisualEffectView()
-        visualEffectView.material = .popover // .popover is less translucent than .hudWindow and matches Spotlight
-        visualEffectView.state = .active
-        visualEffectView.wantsLayer = true
-        visualEffectView.layer?.cornerRadius = 10
-        window.contentView?.addSubview(visualEffectView)
-        visualEffectView.addConstraintsToFillSuperview()
-
-        window.contentView?.addSubview(containerView)
-        containerView.addConstraintsToFillSuperview()
-
-        listContainerView.addSubview(itemsViewController.view)
-        itemsViewController.view.addConstraintsToFillSuperview()
-
-        itemsViewController.selectionChange = { [weak self] selectedItems in
-            guard let filterViewController = self?.filterViewController else { return }
-            filterViewController.changeReturnLabelVisibility(selectionIsEmpty: selectedItems.isEmpty)
-        }
-
-        window.initialFirstResponder = filterViewController.filterTextField
-        filterViewController.filterTextField.arrowKeyableDelegate = itemsViewController.tableView
     }
 }
 
@@ -106,7 +112,7 @@ extension FilterWindowController {
 
     weak var filterChangeDelegate: FilterChangeDelegate? {
         get {
-            return filterViewController?.filterChangeDelegate
+            return filterViewController.filterChangeDelegate
         }
         set {
             loadWindowIfNeeded()

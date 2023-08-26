@@ -14,7 +14,6 @@
 		5027832C23F7D42200853916 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5027832A23F7D42200853916 /* Main.storyboard */; };
 		5027833323F7D44D00853916 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027833223F7D44D00853916 /* Item.swift */; };
 		5027833623F7DC6600853916 /* FilterWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027833423F7DC6600853916 /* FilterWindowController.swift */; };
-		5027833723F7DC6600853916 /* FilterWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5027833523F7DC6600853916 /* FilterWindowController.xib */; };
 		5027833923F7DD5200853916 /* FloatingFilterModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027833823F7DD5200853916 /* FloatingFilterModule.swift */; };
 		5027833B23F7DEB700853916 /* WindowHoldingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027833A23F7DEB700853916 /* WindowHoldingService.swift */; };
 		5027833D23F7E89600853916 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027833C23F7E89600853916 /* ItemsViewController.swift */; };
@@ -34,6 +33,8 @@
 		508AA7BD2A9A1A2100A1D3D3 /* NSView+addConstraintsToFillSuperview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508AA7BC2A9A1A2100A1D3D3 /* NSView+addConstraintsToFillSuperview.swift */; };
 		508AA7BF2A9A798100A1D3D3 /* ItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 508AA7BE2A9A798100A1D3D3 /* ItemsViewController.xib */; };
 		508AA7C12A9A7C9100A1D3D3 /* Bundle+current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508AA7C02A9A7C9100A1D3D3 /* Bundle+current.swift */; };
+		508AA7C32A9A7DBB00A1D3D3 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 508AA7C22A9A7DBB00A1D3D3 /* FilterViewController.xib */; };
+		508AA7C52A9A7E9300A1D3D3 /* NSStackView+convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508AA7C42A9A7E9300A1D3D3 /* NSStackView+convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +84,6 @@
 		5027832E23F7D42200853916 /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
 		5027833223F7D44D00853916 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5027833423F7DC6600853916 /* FilterWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterWindowController.swift; sourceTree = "<group>"; };
-		5027833523F7DC6600853916 /* FilterWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterWindowController.xib; sourceTree = "<group>"; };
 		5027833823F7DD5200853916 /* FloatingFilterModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingFilterModule.swift; sourceTree = "<group>"; };
 		5027833A23F7DEB700853916 /* WindowHoldingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowHoldingService.swift; sourceTree = "<group>"; };
 		5027833C23F7E89600853916 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +101,8 @@
 		508AA7BC2A9A1A2100A1D3D3 /* NSView+addConstraintsToFillSuperview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+addConstraintsToFillSuperview.swift"; sourceTree = "<group>"; };
 		508AA7BE2A9A798100A1D3D3 /* ItemsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsViewController.xib; sourceTree = "<group>"; };
 		508AA7C02A9A7C9100A1D3D3 /* Bundle+current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+current.swift"; sourceTree = "<group>"; };
+		508AA7C22A9A7DBB00A1D3D3 /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
+		508AA7C42A9A7E9300A1D3D3 /* NSStackView+convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStackView+convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				5027833A23F7DEB700853916 /* WindowHoldingService.swift */,
 				5027836023F8382600853916 /* FuzzyMatching.swift */,
 				5027833423F7DC6600853916 /* FilterWindowController.swift */,
+				508AA7C42A9A7E9300A1D3D3 /* NSStackView+convenience.swift */,
 				508AA7C02A9A7C9100A1D3D3 /* Bundle+current.swift */,
 				508AA7BC2A9A1A2100A1D3D3 /* NSView+addConstraintsToFillSuperview.swift */,
 				508AA7BA2A9A163A00A1D3D3 /* Collection+indexed.swift */,
@@ -229,8 +232,8 @@
 			children = (
 				5027830623F7D27A00853916 /* Info.plist */,
 				5027834223F8071F00853916 /* Assets.xcassets */,
-				5027833523F7DC6600853916 /* FilterWindowController.xib */,
 				508AA7BE2A9A798100A1D3D3 /* ItemsViewController.xib */,
+				508AA7C22A9A7DBB00A1D3D3 /* FilterViewController.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -354,7 +357,7 @@
 			files = (
 				5027834323F8071F00853916 /* Assets.xcassets in Resources */,
 				508AA7BF2A9A798100A1D3D3 /* ItemsViewController.xib in Resources */,
-				5027833723F7DC6600853916 /* FilterWindowController.xib in Resources */,
+				508AA7C32A9A7DBB00A1D3D3 /* FilterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508AA7C52A9A7E9300A1D3D3 /* NSStackView+convenience.swift in Sources */,
 				5027834723F821E300853916 /* ArrowKeyableTextField.swift in Sources */,
 				5027834123F800D000853916 /* FilterViewController.swift in Sources */,
 				508AA7C12A9A7C9100A1D3D3 /* Bundle+current.swift in Sources */,
