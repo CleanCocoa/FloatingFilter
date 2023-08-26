@@ -154,12 +154,10 @@
 				5027833A23F7DEB700853916 /* WindowHoldingService.swift */,
 				5027836023F8382600853916 /* FuzzyMatching.swift */,
 				5027833423F7DC6600853916 /* FilterWindowController.swift */,
-				5027833523F7DC6600853916 /* FilterWindowController.xib */,
 				5027834823F823C700853916 /* Filtering */,
 				5027834B23F82B6900853916 /* Items */,
 				5027830523F7D27A00853916 /* FloatingFilter.h */,
-				5027834223F8071F00853916 /* Assets.xcassets */,
-				5027830623F7D27A00853916 /* Info.plist */,
+				508AA7982A9A0F1900A1D3D3 /* Resources */,
 			);
 			name = FloatingFilter;
 			path = Sources/FloatingFilter;
@@ -213,6 +211,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		508AA7982A9A0F1900A1D3D3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5027830623F7D27A00853916 /* Info.plist */,
+				5027834223F8071F00853916 /* Assets.xcassets */,
+				5027833523F7DC6600853916 /* FilterWindowController.xib */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -555,7 +563,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
-				INFOPLIST_FILE = Sources/FloatingFilter/Info.plist;
+				INFOPLIST_FILE = Sources/FloatingFilter/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -586,7 +594,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
-				INFOPLIST_FILE = Sources/FloatingFilter/Info.plist;
+				INFOPLIST_FILE = Sources/FloatingFilter/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

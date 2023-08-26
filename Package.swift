@@ -14,7 +14,11 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "FloatingFilter"),
+            name: "FloatingFilter",
+            resources: [
+                .process("Resources/FilterWindowController.xib"),
+                .process("Resources/Assets.xcassets"),
+            ]),
         .testTarget(
             name: "FloatingFilterTests",
             dependencies: ["FloatingFilter"]),
