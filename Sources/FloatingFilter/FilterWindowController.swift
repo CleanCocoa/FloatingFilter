@@ -46,6 +46,11 @@ class FilterWindowController: NSWindowController {
         visualEffectView.state = .active
         visualEffectView.wantsLayer = true
         visualEffectView.layer?.cornerRadius = 10
+
+        itemsViewController.selectionChange = { [weak self] selectedItems in
+            guard let filterViewController = self?.filterViewController else { return }
+            filterViewController.changeReturnLabelVisibility(selectionIsEmpty: selectedItems.isEmpty)
+        }
     }
 }
 
@@ -82,7 +87,7 @@ extension FilterWindowController {
         }
     }
 
-    var filterChangeDelegate: FilterChangeDelegate? {
+    weak var filterChangeDelegate: FilterChangeDelegate? {
         get {
             return filterViewController?.filterChangeDelegate
         }

@@ -9,7 +9,6 @@ class ItemsViewController: NSViewController {
     var selectionChange: ((_ selectedItems: [Item]) -> Void)?
 
     @IBOutlet weak var tableView: NSTableView!
-    @IBOutlet weak var returnLabel: NSTextField!
 
     fileprivate func selectedItems() -> [Item] {
         items.indexed()
@@ -20,7 +19,7 @@ class ItemsViewController: NSViewController {
     func showItems(_ items: [Item]) {
         self.items = items
         self.tableView.reloadData()
-        showReturnLabelOnNonemptyFilter()
+        self.selectionChange?(selectedItems())
     }
 
     /// Wired to `NSTableView.doubleAction` and thus also to `arrowKeyableTextFieldDidCommit`
@@ -30,7 +29,7 @@ class ItemsViewController: NSViewController {
             NSSound.beep()
             return
         }
-        commitSelection?(selectedItems)
+        self.commitSelection?(selectedItems)
     }
 }
 
@@ -50,13 +49,8 @@ extension ItemsViewController: NSTableViewDelegate, NSTableViewDataSource {
     }
 
     func tableViewSelectionDidChange(_ notification: Notification) {
-        showReturnLabelOnNonemptyFilter()
+        self.selectionChange?(self.selectedItems())
     }
-
-    private func showReturnLabelOnNonemptyFilter() {
-        returnLabel.isHidden = (tableView.selectedRow == -1)
-    }
-
 }
 
 extension Collection {

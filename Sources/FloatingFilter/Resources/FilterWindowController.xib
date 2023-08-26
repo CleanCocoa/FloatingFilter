@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21701"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,12 +20,12 @@
             <connections>
                 <outlet property="filterTextField" destination="b9Q-lc-NoZ" id="7sO-hE-iwb"/>
                 <outlet property="placeholderLabel" destination="nfn-6K-sh6" id="H1v-LT-Dd0"/>
+                <outlet property="returnLabel" destination="9WC-69-Q0h" id="mgN-Uc-BpK"/>
                 <outlet property="view" destination="b9Q-lc-NoZ" id="egx-1y-165"/>
             </connections>
         </viewController>
         <viewController id="Tkp-3I-IJC" customClass="ItemsViewController" customModule="FloatingFilter" customModuleProvider="target">
             <connections>
-                <outlet property="returnLabel" destination="9WC-69-Q0h" id="UTp-X6-8aF"/>
                 <outlet property="tableView" destination="JsY-Af-sFZ" id="Ekr-IL-3xT"/>
                 <outlet property="view" destination="JsY-Af-sFZ" id="KWk-T8-ZfG"/>
             </connections>
