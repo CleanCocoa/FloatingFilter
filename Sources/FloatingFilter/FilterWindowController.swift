@@ -72,13 +72,13 @@ extension FilterWindowController {
         }
     }
 
-    var itemSelectionDelegate: ItemSelectionDelegate? {
+    var commitSelection: ((_ selectedItems: [Item]) -> Void)? {
         get {
-            return itemsViewController?.itemSelectionDelegate
+            return itemsViewController?.commitSelection
         }
         set {
             loadWindowIfNeeded()
-            itemsViewController.itemSelectionDelegate = newValue
+            itemsViewController.commitSelection = newValue
         }
     }
 

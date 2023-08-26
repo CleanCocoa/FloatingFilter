@@ -2,17 +2,20 @@
 
 import Cocoa
 
-protocol ItemSelectionDelegate: AnyObject {
-    func itemsViewController(_ itemsViewController: ItemsViewController, didSelectItems selectedItems: [Item])
-}
-
 class ItemsViewController: NSViewController {
     fileprivate var items: [Item] = []
 
-    weak var itemSelectionDelegate: ItemSelectionDelegate?
+    var commitSelection: ((_ selectedItems: [Item]) -> Void)?
+    var selectionChange: ((_ selectedItems: [Item]) -> Void)?
 
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var returnLabel: NSTextField!
+
+    fileprivate func selectedItems() -> [Item] {
+        items.indexed()
+            .filter { tableView.selectedRowIndexes.contains($0.index) }
+            .map { $0.element }
+    }
 
     func showItems(_ items: [Item]) {
         self.items = items
@@ -22,14 +25,12 @@ class ItemsViewController: NSViewController {
 
     /// Wired to `NSTableView.doubleAction` and thus also to `arrowKeyableTextFieldDidCommit`
     @IBAction func commitSelection(_ sender: NSTableView) {
-        let selectedItems = items.indexed()
-            .filter { sender.selectedRowIndexes.contains($0.index) }
-            .map { $0.element }
+        let selectedItems = self.selectedItems()
         guard selectedItems.isNotEmpty else {
             NSSound.beep()
             return
         }
-        itemSelectionDelegate?.itemsViewController(self, didSelectItems: selectedItems)
+        commitSelection?(selectedItems)
     }
 }
 
