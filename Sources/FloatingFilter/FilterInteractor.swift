@@ -12,14 +12,19 @@ class FilterInteractor {
 
     private var state: State {
         didSet {
-            self.view.showItems(state.filteredItems)
+            self.view.showItems(state.filteredItems(filter: filter))
         }
     }
 
     let view: FilteredItemView
+    let filter: ItemFilter
 
-    init(view: FilteredItemView) {
+    init(
+        view: FilteredItemView,
+        filter: @escaping ItemFilter
+    ) {
         self.view = view
+        self.filter = filter
         self.state = State(allItems: [], filterPhrase: "")
     }
 }
@@ -41,28 +46,8 @@ extension FilterInteractor: FilterChangeDelegate {
 }
 
 extension FilterInteractor.State {
-    fileprivate var filteredItems: [Item] {
+    fileprivate func filteredItems(filter: ItemFilter) -> [Item] {
         guard !filterPhrase.isEmpty else { return allItems }
-        return allItems.sortedByNormalizedFuzzyMatch(pattern: self.filterPhrase)
-    }
-}
-
-extension Sequence where Iterator.Element == Item {
-    fileprivate func sortedByNormalizedFuzzyMatch(pattern: String) -> [Element] {
-        // These magic numbers are totally experimental
-        let fuzziness = 0.3
-        let threshold = 0.4
-        
-        return self
-            .map { (element: $0, score: $0.title.score(word: pattern, fuzziness: fuzziness)) }
-            .filter { $0.score > threshold }
-            .sorted(by: { $0.score > $1.score })
-            .map { $0.element }
-    }
-}
-
-extension Item {
-    fileprivate var normalizedTitle: String {
-        return self.title.lowercased()
+        return filter(filterPhrase, allItems)
     }
 }
