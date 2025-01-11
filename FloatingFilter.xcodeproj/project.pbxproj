@@ -93,6 +93,7 @@
 		508AA7C02A9A7C9100A1D3D3 /* Bundle+current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+current.swift"; sourceTree = "<group>"; };
 		508AA7C22A9A7DBB00A1D3D3 /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
 		508AA7C42A9A7E9300A1D3D3 /* NSStackView+convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStackView+convenience.swift"; sourceTree = "<group>"; };
+		50B62F652D32BA8E00CF6DC1 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +120,7 @@
 			children = (
 				5027831C23F7D40200853916 /* LICENSE */,
 				5027831D23F7D40200853916 /* README.md */,
+				50B62F652D32BA8E00CF6DC1 /* Package.swift */,
 				5027830423F7D27A00853916 /* FloatingFilter */,
 				5027832323F7D42000853916 /* Example */,
 				5027830323F7D27A00853916 /* Products */,
