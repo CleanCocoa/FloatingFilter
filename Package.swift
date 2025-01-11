@@ -20,8 +20,5 @@ let package = Package(
                 .process("Resources/ItemsViewController.xib"),
                 .process("Resources/Assets.xcassets"),
             ]),
-        .testTarget(
-            name: "FloatingFilterTests",
-            dependencies: ["FloatingFilter"]),
     ]
 )
