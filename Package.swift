@@ -15,10 +15,14 @@ let package = Package(
     targets: [
         .target(
             name: "FloatingFilter",
+            exclude: [
+                "Resources/Info.plist",
+            ],
             resources: [
                 .process("Resources/FilterViewController.xib"),
                 .process("Resources/ItemsViewController.xib"),
                 .process("Resources/Assets.xcassets"),
-            ]),
+            ]
+        )
     ]
 )
